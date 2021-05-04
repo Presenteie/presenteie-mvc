@@ -1,0 +1,36 @@
+@model Presenteie.Models.User
+@{
+    ViewData["Title"] = "Criar uma conta";
+}
+
+@section CSS
+{
+    <link rel="stylesheet" href="~/css/signup.css"/>
+}
+
+<div class="signup">
+    <form asp-controller="SignUp" asp-action="Index" method="post">
+        <div asp-validation-summary="ModelOnly"></div>
+        
+        <label>
+            Nome
+            <input type="text" asp-for="Name"/>
+            <span asp-validation-for="Name"></span>
+        </label>
+        <label>
+            Email
+            <input type="email" asp-for="Email"/>
+            <span asp-validation-for="Email"></span>
+        </label>
+        <label>
+            Senha
+            <input type="password" asp-for="Password"/>
+            <span asp-validation-for="Password"></span>
+        </label>
+
+        <button type="submit">Cadastrar-se</button>
+    </form>
+
+    <a href="#">Já possui uma conta?</a>
+</div>
+
