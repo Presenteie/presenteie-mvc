@@ -7,18 +7,70 @@ for details on configuring this project to bundle and minify static web assets. 
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
   background-image: url("/img/background.jpg");
   background-size: cover;
+  height: 100vh;
 }
 
 /* Header styles
 -------------------------------------------------- */
 
+body header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  background: #C6AD89;
+  height: 60px;
+}
+
+body header a img {
+  height: 40px;
+}
+
+body header nav ul {
+  list-style: none;
+  display: flex;
+}
+
+body header nav ul li {
+  margin: 5px;
+}
+
+body header nav ul li a {
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+body header nav ul li a:hover {
+  background: #bba27f;
+}
+
 /* Main styles
 -------------------------------------------------- */
 
+body main {
+  height: calc(100vh - 120px);
+}
+
 /* Footer styles
 -------------------------------------------------- */
+
+body footer {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body footer div {
+  font-size: 15px;
+  font-weight: 500;
+}
