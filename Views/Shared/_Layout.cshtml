@@ -6,20 +6,18 @@
     <title>@ViewData["Title"] - Presenteie</title>
     <link rel="stylesheet" href="~/css/site.css"/>
     @await RenderSectionAsync("CSS", required: false)
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
+    <a asp-controller="Home" asp-action="Index">
+        <img src="~/img/logo.png" alt="Presenteie">
+    </a>
     <nav>
-        <a asp-area="" asp-controller="Home" asp-action="Index">Presenteie</a>
         <ul>
             <li>
-                <a asp-area="" asp-controller="Home" asp-action="Index">Início</a>
-            </li>
-            <li>
                 <a asp-area="" asp-controller="SignUp" asp-action="Index">Criar Conta</a>
-            </li>
-            <li>
-                <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacidade</a>
             </li>
         </ul>
     </nav>
