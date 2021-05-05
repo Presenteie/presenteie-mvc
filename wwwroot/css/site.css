@@ -8,6 +8,7 @@ for details on configuring this project to bundle and minify static web assets. 
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+  outline: none;
 }
 
 body {
@@ -57,6 +58,7 @@ body header nav ul li a:hover {
 -------------------------------------------------- */
 
 body main {
+  display: flex;
   height: calc(100vh - 120px);
 }
 

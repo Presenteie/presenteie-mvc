@@ -9,9 +9,11 @@
 }
 
 <div class="signup">
+    <h1>Criar uma conta</h1>
+    
     <form asp-controller="SignUp" asp-action="Index" method="post">
         <div asp-validation-summary="ModelOnly"></div>
-        
+
         <label>
             Nome
             <input type="text" asp-for="Name"/>
