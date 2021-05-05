@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Presenteie.Models
@@ -15,5 +16,7 @@ namespace Presenteie.Models
         
         [Required]
         public string Password { get; set; }
+        
+        public List<List> List { get; set; } 
     }
 }
