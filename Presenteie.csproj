@@ -6,6 +6,7 @@
 
     <ItemGroup>
       <None Remove="Views\Home\Privacy.cshtml~" />
+      <None Remove="Repositories\**" />
     </ItemGroup>
 
     <ItemGroup>
@@ -23,6 +24,19 @@
       </PackageReference>
       <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
       <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.5.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Models\Credentials.cs" />
+      <Compile Remove="Repositories\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Repositories\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="Repositories\**" />
     </ItemGroup>
 
 </Project>

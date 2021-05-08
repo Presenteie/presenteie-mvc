@@ -13,8 +13,8 @@ namespace Presenteie.Controllers
         {
             _context = presenteieContext;
         }
-
-        // GET
+        
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
