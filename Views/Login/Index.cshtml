@@ -1,4 +1,4 @@
-@model Presenteie.Models.User
+@model Presenteie.Models.UserCredentials
 @{
     ViewData["Title"] = "Criar uma conta";
 }
@@ -11,14 +11,7 @@
 <div class="signup">
     <h1>Criar uma conta</h1>
     
-    <form asp-controller="SignUp" asp-action="Index" method="post">
-        <div asp-validation-summary="ModelOnly"></div>
-
-        <label>
-            Nome
-            <input type="text" asp-for="Name" placeholder="Fulano"/>
-            <span asp-validation-for="Name"></span>
-        </label>
+    <form asp-controller="Login" asp-action="Index" method="post" asp-route-returnurl="@Model?.ReturnUrl">
         <label>
             Email
             <input type="email" asp-for="Email" placeholder="seu.email@exemplo.com"/>
@@ -26,17 +19,23 @@
         </label>
         <label>
             Senha
-            <input type="password" asp-for="Password"/>
+            <input type="password" asp-for="Password" />
             <span asp-validation-for="Password"></span>
         </label>
+        <label class="for-radio">
+            Mantenha-me conectado
+            <input asp-for="RememberMe" />
+        </label>
 
-        <button type="submit">Cadastrar-se</button>
+        <button type="submit">Entrar</button>
     </form>
 
-    <a asp-controller="Login" asp-action="Index">Já possui uma conta?</a>
+    <a asp-controller="SignUp" asp-action="Index">Não possui uma conta?</a>
 </div>
 
 @section Scripts
 {
     @{ <partial name="_ValidationScriptsPartial" /> }
 }
+
+
