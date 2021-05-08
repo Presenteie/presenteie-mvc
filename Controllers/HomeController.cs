@@ -12,7 +12,8 @@ namespace Presenteie.Controllers
         {
             return View();
         }
-
+        
+        [AllowAnonymous]
         public IActionResult Privacy()
         {
             return View();
