@@ -9,17 +9,19 @@
 }
 
 <div class="signup">
+    <h1>Criar uma conta</h1>
+    
     <form asp-controller="SignUp" asp-action="Index" method="post">
         <div asp-validation-summary="ModelOnly"></div>
-        
+
         <label>
             Nome
-            <input type="text" asp-for="Name"/>
+            <input type="text" asp-for="Name" placeholder="Fulano"/>
             <span asp-validation-for="Name"></span>
         </label>
         <label>
             Email
-            <input type="email" asp-for="Email"/>
+            <input type="email" asp-for="Email" placeholder="seu.email@exemplo.com"/>
             <span asp-validation-for="Email"></span>
         </label>
         <label>
@@ -31,7 +33,7 @@
         <button type="submit">Cadastrar-se</button>
     </form>
 
-    <a href="#">Já possui uma conta?</a>
+    <a asp-controller="Login" asp-action="Index">Já possui uma conta?</a>
 </div>
 
 @section Scripts

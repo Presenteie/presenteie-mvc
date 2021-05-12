@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using System.Security.Claims
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -16,9 +17,20 @@
     </a>
     <nav>
         <ul>
-            <li>
-                <a asp-area="" asp-controller="SignUp" asp-action="Index">Criar Conta</a>
-            </li>
+            @if (User.Identity is not null && User.Identity.IsAuthenticated) {
+                <li>
+                    <a asp-controller="Login" asp-action="Logout">Sair</a>
+                </li>
+            }
+            else
+            {
+                <li>
+                    <a asp-area="" asp-controller="SignUp" asp-action="Index">Criar Conta</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="Login" asp-action="Index">Entrar</a>
+                </li>
+            }
         </ul>
     </nav>
 </header>

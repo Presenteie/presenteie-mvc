@@ -47,3 +47,5 @@ You can also change it by editing **appsettings.json**
 * [.NET Core CLI : Includes commands to update, drop, add, remove, and more.](https://docs.microsoft.com/en-us/ef/core/cli/dotnet)
 * [Package Manager Console in Visual Studio : Includes commands to update, drop, add, remove, and more.](https://docs.microsoft.com/en-us/ef/core/cli/powershell)
 
+### ASP.NET Core Security reference
+* [Use cookie authentication without ASP.NET Core Identity](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/cookie?view=aspnetcore-5.0)
