@@ -1,7 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Data;
 using Presenteie.Models.Enum;
 
 /*
@@ -25,7 +25,7 @@ namespace Presenteie.Models
         public List<Item> ItemList { get; set; }
         
         // TODO Existe alguma classe melhor para representar data? 
-        public DataSetDateTime Date { get; set; }
+        public DateTime Date { get; set; }
     }
     
 }
