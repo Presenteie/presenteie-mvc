@@ -25,4 +25,8 @@
       <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.5.1" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\RegisterList\index.cshtml" />
+    </ItemGroup>
+
 </Project>
