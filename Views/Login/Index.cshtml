@@ -11,15 +11,14 @@
 
 <div class="signup align-items-center">
     <img style="height: 5.5rem" class="mb-4" src="img/brand.svg" alt="presente.ie" />
-    <form asp-controller="Login" asp-action="Index" method="post" asp-route-returnurl="@Model?.ReturnUrl">
+    <form class="w-100" asp-controller="Login" asp-action="Index" method="post" asp-route-returnurl="@Model?.ReturnUrl">
         <div class="mb-3">
             <label for="email" class="font-weight-bold m-0">E-mail</label>
-            <input type="email" class="form-control py-4" asp-for="Email" placeholder="digite seu e-mail" id="email">
+            <input style="border-radius: 8px" type="email" class="form-control py-4" asp-for="Email" placeholder="digite seu e-mail" id="email">
             <span asp-validation-for="Email"></span>
-        </div>
-        <div>
+        </div> <div>
             <label for="password" class="font-weight-bold m-0">Senha</label>
-            <input type="password" class="form-control py-4" asp-for="Password" placeholder="digite sua senha" id="password">
+            <input style="border-radius: 8px" type="password" class="form-control py-4" asp-for="Password" placeholder="digite sua senha" id="password">
             <span asp-validation-for="Password"></span>
         </div>
         <label class="for-radio mt-3">
