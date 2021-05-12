@@ -62,14 +62,32 @@
 }
 
 .signup a {
-    font-size: 20px;
-    text-shadow: 0 0 4px black;
-    font-weight: 500;
-    color: white;
+    /*font-size: 20px;*/
+    /*text-shadow: 0 0 4px black;*/
+    /*font-weight: 500;*/
+    /*color: white;*/
+    /*margin: 10px auto;*/
     text-decoration: none;
-    margin: 10px auto;
+    color: #8C8E93;
 }
 
 .signup a:hover {
     text-decoration: underline;
+}
+
+#brand p {
+    color: #8C8E93;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+#brand h1 {
+    color: #FFFFFF;
+    font-size: 3.5rem;
+    text-shadow: #000000 1px 1px 1px 100px;
+    margin: 0;
+}
+
+.auth span {
+    margin-bottom: 5px !important;
 }
