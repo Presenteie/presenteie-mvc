@@ -7,7 +7,8 @@
 ## Database
 Run an image of MySQL in Docker: 
 ```shell
-docker run -p 3306:3306 --name presenteie-mysql -e MYSQL_ROOT_PASSWORD=superpassword -e MYSQL_DATABASE=presenteie -e MYSQL_USER=user -e MYSQL_PASSWORD=password -d mysql```
+docker run -p 3306:3306 --name presenteie-mysql -e MYSQL_ROOT_PASSWORD=superpassword -e MYSQL_DATABASE=presenteie -e MYSQL_USER=user -e MYSQL_PASSWORD=password -d mysql
+```
 
 Or set up an instance yourself. Default settings:
 * Host: `localhost`
