@@ -26,9 +26,17 @@ namespace Presenteie
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<PresenteieContext>(options =>
-                options.UseNpgsql(Configuration.GetConnectionString("PresenteieContext")));
-
+            var connectionString = Configuration.GetConnectionString("PresenteieContext");
+                
+            var serverVersion = new MySqlServerVersion(new Version(8, 0, 21));
+            
+            services.AddDbContextPool<PresenteieContext>(dbContextOptions => 
+                dbContextOptions
+                    .UseMySql(connectionString, serverVersion)
+                    .EnableSensitiveDataLogging() // (remove for production)
+                    .EnableDetailedErrors() // (remove for production)
+            );
+            
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options =>
                 {
