@@ -11,7 +11,7 @@ docker run -p 3306:3306 --name presenteie-mysql -e MYSQL_ROOT_PASSWORD=superpass
 
 Or set up an instance yourself. Default settings:
 * Host: `localhost`
-* Port: `5432`
+* Port: `3306`
 * Database: `presenteie`
 * User: `user`
 * Password: `password`
