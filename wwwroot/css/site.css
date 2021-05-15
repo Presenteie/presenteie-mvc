@@ -36,6 +36,7 @@ body header a img {
 body header nav ul {
   list-style: none;
   display: flex;
+  margin: 0;
 }
 
 body header nav ul li {
@@ -52,6 +53,8 @@ body header nav ul li a {
 
 body header nav ul li a:hover {
   background: #bba27f;
+  color: #FFFFFF;
+  text-decoration: none;
 }
 
 /* Main styles
