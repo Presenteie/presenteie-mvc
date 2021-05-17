@@ -12,17 +12,22 @@ namespace Presenteie.Models
 {
     public class List
     {
+        [Key] 
+        public long Id { get; set; }
+
         // Id do usuário que criou essa lista
-        [Key]
         [ForeignKey("User")]
         public long IdUser { get; set; }
 
         // Tema da lista
         [Required] 
         public Theme ThemeList { get; set; }
-
-        // TODO Existe alguma classe melhor para representar data? 
-        public DateTime Date { get; set; }
+        
+        [Required]
+        public DateTime CreatedDate { get; set; }
+        
+        [Required]
+        public DateTime EventDate { get; set; }
     }
     
 }
