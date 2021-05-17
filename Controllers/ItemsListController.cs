@@ -13,13 +13,5 @@ namespace Presenteie.Controllers
         {
             return View();
         }
-
-        [HttpPost]
-        public IActionResult Index([FromForm] string message)
-        {
-            Console.WriteLine(message);
-            // TODO preciso achar um jeito de enviar a variavel item para a view
-            return RedirectToAction("Index", "ItemsEdit", message);
-        }
     }
 }
