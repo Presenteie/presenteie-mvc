@@ -18,12 +18,9 @@ namespace Presenteie.Models
         public long IdUser { get; set; }
 
         // Tema da lista
-        [Required]
+        [Required] 
         public Theme ThemeList { get; set; }
-        
-        // Lista de itens
-        public List<Item> ItemList { get; set; }
-        
+
         // TODO Existe alguma classe melhor para representar data? 
         public DateTime Date { get; set; }
     }
