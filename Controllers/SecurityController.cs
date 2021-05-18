@@ -7,23 +7,42 @@ using Presenteie.Models;
 
 namespace Presenteie.Controllers
 {
-    public class PasswordController : Controller
+    [Route("Security")]
+    public class SecurityController : Controller
     {
         private readonly PresenteieContext _context;
 
-        public PasswordController(PresenteieContext presenteieContext)
+        public SecurityController(PresenteieContext presenteieContext)
         {
             _context = presenteieContext;
         }
         
-        [HttpGet]
-        public IActionResult Index()
+        [HttpGet("{hash?}")]
+        public IActionResult Index(string hash)
         {
+            if (hash != null)
+            {
+                var security = _context.Security.FirstOrDefault(sec => sec.Hash.Equals(hash));
+        
+                if (security != null)
+                {
+                    if (DateTime.Compare(DateTime.Now, security.ExpiresAt) < 0)
+                    {
+                        return View("Reset");
+                    }
+        
+                    _context.Security.Remove(security);
+                    _context.SaveChanges();
+                }
+        
+                return NotFound();
+            }
+
             return View();
         }
 
         [HttpPost]
-        public IActionResult Index([FromForm] string email)
+        public IActionResult Save([FromForm] string email)
         {
             var account = _context.Users.FirstOrDefault(user => user.Email.Equals(email));
 
@@ -50,24 +69,7 @@ namespace Presenteie.Controllers
                 _context.SaveChanges();
             }
             
-            return RedirectToAction("Index", "Password");
-        }
-
-        [HttpGet("Password/Reset/{hash}")]
-        public IActionResult Reset(string hash)
-        {
-            var userHash = _context.Security.FirstOrDefault(sec => sec.Hash.Equals(hash));
-
-            if (userHash != null)
-            {
-                if (DateTime.Now.)
-                {
-                    
-                }
-                return View();   
-            }
-
-            return NotFound();
+            return RedirectToAction("Index", "Security");
         }
     }
 }
