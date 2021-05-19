@@ -13,9 +13,9 @@
     <p>Digite sua nova senha</p>
     <form asp-controller="Security" asp-action="Reset" asp-route-hash="@hash" method="post">
         <div class="mb-3">
-            <label for="password">Senha</label>
+            <label for="password" class="font-weight-bold m-0" style="color: #767676;">Senha</label>
             <input name="password" id="password" type="password" class="form-control" autocomplete="off">
         </div>
-        <button class="btn btn-primary">Confirmar</button>
+        <button class="btn btn-primary" style="background: #767676 !important; color: #FFFFFF;">Confirmar</button>
     </form>
 </div>

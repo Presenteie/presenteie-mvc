@@ -94,7 +94,7 @@ namespace Presenteie.Controllers
                 SendMail(account.Email, security.Hash);
             }
             
-            return RedirectToAction("Index", "Security");
+            return RedirectToAction("Confirmed", "Security");
         }
 
         [HttpPost("Reset/{hash}")]
@@ -117,10 +117,22 @@ namespace Presenteie.Controllers
                 _context.Security.Remove(security);
                 _context.SaveChanges();
                 
-                return RedirectToAction("Index", "Login");
+                return RedirectToAction("Finish", "Security");
             }
 
             return NotFound();
+        }
+
+        [HttpGet("Confirmed")]
+        public IActionResult Confirmed()
+        {
+            return View("Confirmed");
+        }
+
+        [HttpGet("Finish")]
+        public IActionResult Finish()
+        {
+            return View("Finish");
         }
     }
 }
