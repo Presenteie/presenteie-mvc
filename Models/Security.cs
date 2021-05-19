@@ -1,25 +1,23 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
 
 namespace Presenteie.Models
 {
     public class Security
     {
         [Key]
-        public long Id { get; set; }
-        
-        [ForeignKey("User")]
-        public long IdUser { get; set; }
+        public long Id { get; init; }
         
         [Required]
-        public string Hash { get; set; }
+        public long UserId { get; init; }
         
         [Required]
-        public DateTime ExpiresAt { get; set; }
+        public string Hash { get; init; }
         
         [Required]
-        public DateTime CreatedAt { get; set; }
+        public DateTime ExpiresAt { get; init; }
+        
+        [Required]
+        public DateTime CreatedAt { get; init; }
     }
 }

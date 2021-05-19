@@ -86,7 +86,7 @@ namespace Presenteie.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<long>("IdUser")
+                    b.Property<long>("UserId")
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");

@@ -9,7 +9,7 @@ using Presenteie;
 namespace Presenteie.Migrations
 {
     [DbContext(typeof(PresenteieContext))]
-    [Migration("20210517232508_Security")]
+    [Migration("20210518234720_Security")]
     partial class Security
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -88,7 +88,7 @@ namespace Presenteie.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<long>("IdUser")
+                    b.Property<long>("UserId")
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");

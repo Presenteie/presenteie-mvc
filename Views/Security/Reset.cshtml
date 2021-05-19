@@ -1,5 +1,6 @@
 @{
     ViewBag.Title = "Redefinir Senha";
+    var hash = ViewBag.hash;
 }
 
 @section CSS
@@ -10,7 +11,7 @@
 <div class="container d-flex flex-column justify-content-center">
     <h1 class="mb-0">Redefinir Senha</h1>
     <p>Digite sua nova senha</p>
-    <form method="post">
+    <form asp-controller="Security" asp-action="Reset" asp-route-hash="@hash" method="post">
         <div class="mb-3">
             <label for="password">Senha</label>
             <input name="password" id="password" type="password" class="form-control" autocomplete="off">
