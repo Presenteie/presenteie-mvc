@@ -1,8 +1,79 @@
 ﻿@{
-    ViewData["Title"] = "Página Inicial";
+    ViewData["Title"] = "Home";
 }
 
-<div>
-    <h1>Olá, @User.Identity?.Name!</h1>
-    <p>Aprenda sobre <a href="https://docs.microsoft.com/aspnet/core">criar aplicativos web com ASP.NET Core</a>.</p>
-</div>
+@section CSS
+{
+    <link rel="stylesheet" href="~/css/home.css">
+}
+
+ <div id= "tela" >
+        
+        <div id= "LateralEsquerda">
+        <img id= "fotoperfil" src="img/tela.perfil2.jpeg">
+
+        <nav id="menu">     
+          <h2><li>Informações</li></h2>
+            <hr id= "tracoDiferente">
+            <ul>
+            <li>Criar Lista</li>
+            <hr>
+            <li>Minha Lista</li>
+            <hr>
+            <li>Meus Presentes</li>
+            <hr>
+            <li>Configurações</li>
+            <hr>
+            <li>Sair</li>
+            <hr>
+            </ul>
+        </nav> 
+        </div>
+
+        <div id= "LateralDireita"> 
+            <div id= "retangulo">
+            </div>
+            <div id="MyList">
+             <h1> Minha Lista </h1>
+            </div>
+             <!--
+
+            < id= "retanguloMyList">
+            <h1 id="MyList"> Minha Lista </h1>
+            </>
+            <h1 id="retangulo"> uuuuuu</h1>-->
+            <img id= "fotoEvento" src="img/fotocasal1.jpeg"> 
+            <h2 id= "nomeEvento"> Vanessa & Luíza </h2>
+            <h3>Casamento </h3>
+            <h4>| 30/05/21</h4>
+
+            <img id= "fotoEvento" src="img/festa1.jpeg"> 
+            <h2 id= "nomeEvento"> Vanessa & Luíza </h2>
+            <h3>Casamento </h3>
+            <h4>| 30/05/21</h4>
+
+            <img id= "fotoEvento" src="img/festa2.jpeg"> 
+            <h2 id= "nomeEvento"> Vanessa & Luíza </h2>
+            <h3>Casamento </h3>
+            <h4>| 30/05/21</h4>
+
+            <img id= "fotoEvento" src="img/fotocasal2.jpeg"> 
+            <h2 id= "nome"> Vanessa & Luíza </h2>
+            <h3 >Casamento </h3>
+            <h4>| 30/05/21</h4>
+
+            <img id= "fotoEvento2" src="img/fotoaniversario.jpeg"> 
+            <h2 id= "nome2"> Vanessa & Luíza </h2>
+            <h3 id="nomeEvento2" >Casamento </h3>
+            <h4 id="data2">| 30/05/21</h4>
+
+            <img id= "fotoEvento2" src="img/presente1.jpeg"> 
+            <h2 id= "nome2"> Vanessa & Luíza </h2>
+            <h3 id="nomeEvento2" >Casamento </h3>
+            <h4 id="data2">| 30/05/21</h4>
+
+            <img id= "fotoEvento2" src="img/foto5.jpeg"> 
+            <h2 id= "nome2"> Vanessa & Luíza </h2>
+            <h3 id="nomeEvento2" >Casamento </h3>
+            <h4 id="data2">| 30/05/21</h4>
+        </div>

@@ -1,0 +1,243 @@
+
+body main {
+    display: flex;
+    height: calc(100vh - 60px);
+    background-color: #c4c4c433;
+
+}
+
+div#LateralEsquerda {
+    width: 22%;
+    background-color: #c4c4c459;
+    display: flex;
+    place-items: center;
+    flex-direction: column;
+    box-shadow: 4px 5px 13px #8c8e93;
+    
+}
+
+div#LateralDireita {
+    height: 100%;
+    width: 73%;
+    display: flex;
+}
+
+div#tela {
+    height: 100%;
+    width:100%;
+    display: flex;
+    height: 100%;
+}
+
+/*div#LateralDireita li {
+    color: rgb(255, 255, 255);
+    list-style: none;
+    position: relative;
+    top: 50px;
+    left: 190px;
+    background-color: #999999;
+}
+
+div#retangulo {
+    width: 1335px;
+    font-size: 0;
+    height: 19px;
+    background-color: #C6AD89;
+    margin-top: 50px;
+    margin-left: 25px;
+    display: flex;
+    position: relative;
+    left: 3%;
+    border-radius: 7px;
+}
+
+div#retanguloMyList {
+    width: 499px;
+    height: 19px;
+    background-color: #C6AD89;
+    margin-top: 50px;
+    margin-left: 35px;
+    display: flex;
+    position: relative;
+    left: -9%;
+    border-radius: 7px;
+}
+
+div#retanguloMyList h1{
+    display: flex;
+    position: relative;
+    left: -7%;
+    top:0px;
+    font-size: 12pt;
+    color: #fcfaf8;
+}*/
+
+div#LateralDireita h1{
+
+    margin-top: 0px;
+    margin-left: 62px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13pt;
+    color: #fcfaf8;
+    list-style: none;
+    border-radius: 7px;
+    bottom: 2%;
+}
+
+#fotoperfil {
+    width: 165px;
+    height: auto;
+    border-radius: 50%;
+    top: 50px;
+    left: 50px;
+    border: 6px #C6AD89 solid;
+    margin-top: 30px;
+}
+
+nav#menu ul {
+    font-family: 'Roboto', sans-serif;
+    font-size: 10pt;
+    color: #8C8E93;
+    text-transform: uppercase;
+    list-style: none;
+    left: 35px;
+    top: -1px;
+
+}
+
+#tracoDiferente {
+    margin-top: 14px;
+    border-top: 1px solid #C6AD89;
+    margin-bottom: 14px;
+}
+
+hr {
+    margin-top: 14px;
+    border-top: 1px solid #999999;
+    margin-bottom: 14px;
+}
+
+div#LateralEsquerda h2 {
+    margin-top: 40px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13pt;
+    color: #C6AD89;
+    list-style: none;
+    text-align: justify;
+    line-height: 29px;
+    bottom: 2px;
+    top: 20px;
+}
+
+div#LateralDireita #fotoEvento {
+    width: 135px;
+    height: 122px;
+    border-radius: 14%;
+    position: relative;
+    left: 422px;
+    border: 6px #FFFFFF solid;
+    margin: 6rem 3rem 4rem 7rem;
+}
+
+div#LateralDireita #fotoEvento2 {
+    width: 135px;
+    height: 122px;
+    border-radius: 14%;
+    position: relative;
+    left: 974px;
+    border: 6px #FFFFFF solid;
+    margin: 6rem 3rem 4rem 7rem;
+    margin-top: 293px;
+}
+
+div#LateralDireita h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 13pt;
+    color: #C6AD89;
+    position: relative;
+    left: 131px;
+    margin: 14rem -36rem 1rem 7rem;
+}
+
+div#LateralDireita #nome2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 13pt;
+    color: #C6AD89;
+    position: relative;
+    left: 682px;
+    margin: 26rem -36rem 1rem 7rem;
+}
+
+div#LateralDireita h3 {
+    margin-top: 244px;
+    margin-left: -137px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11pt;
+    color: #727272;
+    position: relative;
+    left: 716px;
+}
+
+div#LateralDireita #nomeEvento2 {
+    margin-top: 435px;
+    margin-left: -137px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11pt;
+    color: #727272;
+    position: relative;
+    left: 1268px;
+}
+
+div#LateralDireita h4 {
+    margin-top: 247px;
+    margin-left: -137px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 9pt;
+    color: #727272;
+    position: relative;
+    left: 854px;
+    display: flex;
+}
+
+div#LateralDireita #data2 {
+    margin-top: 438px;
+    margin-left: -137px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 9pt;
+    color: #727272;
+    position: relative;
+    left: 1406px;
+    display: flex;
+}
+    
+div#retangulo {
+    width: 750px;
+    height: 16px;
+    background-color: #C6AD89;
+    display: flex;
+    position: relative;
+    left: 4%;
+    border-radius: 7px;
+    padding: 13px;
+    margin: 3rem -23rem 2rem 0rem;
+}
+
+div#MyList {
+    width: 216px;
+    height: 26px;
+    background-color: #c6ad89;
+    display: flex;
+    position: relative;
+    left: 41%;
+    border-radius: 8px;
+    margin: 3rem -33rem 1rem 1rem;
+}
+
+div#MyList h1 {
+    display: flex;
+    position: relative;
+    left: -3%;
+    top: 1px;
+    font-size: 15pt;
+    color: #fcfaf8;
+}

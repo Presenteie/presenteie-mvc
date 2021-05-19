@@ -18,9 +18,8 @@
     <nav>
         <ul>
             @if (User.Identity is not null && User.Identity.IsAuthenticated) {
-                <li>
-                    <a asp-controller="Login" asp-action="Logout">Sair</a>
-                </li>
+               
+                <p class="name">@User.Identity.Name</p>
             }
             else
             {
@@ -38,11 +37,14 @@
     @RenderBody()
 </main>
 
+<!--
 <footer>
     <div>
         &copy; 2021 - Presenteie - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacidade</a>
     </div>
 </footer>
+-->
+
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
