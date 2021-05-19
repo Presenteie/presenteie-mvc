@@ -19,6 +19,7 @@
       <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
       <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.0" />
       <PackageReference Include="Pomelo.EntityFrameworkCore.MySql.Design" Version="1.1.2" />
+      <PackageReference Include="RestSharp" Version="106.11.7" />
     </ItemGroup>
 
     <ItemGroup>
@@ -32,6 +33,14 @@
 
     <ItemGroup>
       <Content Remove="Repositories\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Password\Reset\index.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Migrations" />
     </ItemGroup>
 
 </Project>

@@ -10,6 +10,8 @@ namespace Presenteie
         public DbSet<List> Lists { get; set; }
         
         public DbSet<Item> Items { get; set; }
+        
+        public DbSet<Security> Security { get; set; }
         public PresenteieContext(DbContextOptions options) : base(options)
         {
         }
