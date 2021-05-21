@@ -57,6 +57,11 @@ body header nav ul li a:hover {
   text-decoration: none;
 }
 
+body header nav ul .name{
+ color: #FFFFFF;
+ font-family: 'Roboto', sans-serif;
+ font-size: 20px;
+}
 /* Main styles
 -------------------------------------------------- */
 

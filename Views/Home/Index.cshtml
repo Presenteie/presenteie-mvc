@@ -1,8 +1,117 @@
 ﻿@{
-    ViewData["Title"] = "Página Inicial";
+    ViewData["Title"] = "Home";
 }
 
-<div>
-    <h1>Olá, @User.Identity?.Name!</h1>
-    <p>Aprenda sobre <a href="https://docs.microsoft.com/aspnet/core">criar aplicativos web com ASP.NET Core</a>.</p>
-</div>
+@section CSS
+{
+    <link rel="stylesheet" href="~/css/home.css">
+}
+
+<body>     
+        <div id= "LateralEsquerda">
+        <img id= "fotoperfil" src="img/4foto.png">
+
+        <nav id="menu">     
+          <h2><li>Informações</li></h2>
+            <hr id= "tracoDiferente">
+            <ul>
+            <a href="#">Minha Lista</a>
+            <hr>
+            <a href="#">Meus Presentes</a>
+            <hr>
+            <a href="#">Configurações</a>
+            <hr>
+            <a href="#">Sair</a>
+            <hr>
+            </ul>
+        </nav> 
+        </div>
+
+        <div id= "LateralDireita"> 
+            <div id= "retangulo">
+            </div>
+
+            <div id="MyList">
+            <a href="#"> <strong>+ Criar Lista</strong> </a>
+            </div>
+
+            <div id="localimagens">
+                <div id="imagens">
+                    <div id="box">
+                        <a href="#"> <img src="img/festa1.jpeg"> </a>
+                        <h4> Jonathas Silva </h4>
+                        <p>Casamento | 30/05/21</p>
+                    </div>
+
+                    <div id="box">
+                        <a href="#"> <img src="img/festa1.jpeg"> </a>
+                        <h4> Luciana</h4>
+                        <p>Velório | 30/05/21</p>
+                    </div>
+
+                    <div id="box">
+                        <a href="#"> <img src="img/festa1.jpeg"> </a>
+                        <h4> José Lucas </h4>
+                        <p>Casamento | 30/05/21</p>
+                    </div>
+
+                    <div id="box">
+                        <a href="#"> <img src="img/festa1.jpeg"> </a>
+                        <h4> Thais Tarora</h4>
+                        <p>Aniverário | 30/05/21</p>
+                    </div>
+
+                    <div id="box">
+                        <a href="#"> <img src="img/festa1.jpeg"> </a>
+                        <h4> Felipe Sampaio </h4>
+                        <p>Bodas | 30/05/21</p>
+                    </div>
+
+                    <div id="box">
+                        <a href="#"> <img src="img/festa1.jpeg"> </a>
+                        <h4> Pedro Henrique </h4>
+                        <p>Aniversário| 30/05/21</p>
+                    </div>
+
+                    <div id="box">
+                        <a href="#"> <img src="img/festa1.jpeg"> </a>
+                        <h4> João Francisco</h4>
+                        <p>Casamento | 30/05/21</p>
+                    </div>
+
+                    <div id="box">
+                        <a href="#"> <img src="img/festa1.jpeg"> </a>
+                        <h4> Aline Rosa</h4>
+                        <p>Bodas | 30/05/21</p>
+                    </div>
+
+                    <div id="box">
+                        <a href="#"> <img src="img/festa1.jpeg"> </a>
+                        <h4> Breno Luiz </h4>
+                        <p>Aniversário | 30/05/21</p>
+                    </div>
+
+                     <div id="box">
+                        <a href="#"> <img src="img/festa1.jpeg"> </a>
+                        <h4> Flávia Beatriz </h4>
+                        <p>Aniversário | 30/05/21</p>
+                    </div>
+
+                     <div id="box">
+                        <a href="#"> <img src="img/festa1.jpeg"> </a>
+                        <h4> Lucas Souza </h4>
+                        <p>Aniversário | 30/05/21</p>
+                    </div>
+
+                     <div id="box">
+                        <a href="#"> <img src="img/festa1.jpeg"> </a>
+                        <h4> Lucas Souza </h4>
+                        <p>Aniversário | 30/05/21</p>
+                    </div>
+
+                </div>  
+            </div>
+        </div>
+</body>
+
+      
