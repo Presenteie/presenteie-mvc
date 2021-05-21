@@ -19,7 +19,7 @@
         <ul>
             @if (User.Identity is not null && User.Identity.IsAuthenticated) {
                
-                <p class="name">@User.Identity.Name</p>
+                <p class="name"><strong>Olá, @User.Identity.Name</strong></p>
             }
             else
             {

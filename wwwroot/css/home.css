@@ -6,209 +6,152 @@ body main {
 
 }
 
+body {
+    width:100%;
+}
+
 div#LateralEsquerda {
     width: 22%;
-    background-color: #c4c4c459;
+    font-family: 'Roboto', sans-serif;
+    background-color: #c4c4c48e;
     display: flex;
     place-items: center;
     flex-direction: column;
     box-shadow: 4px 5px 13px #8c8e93;
-    
+    text-align: center;
+}
+
+#fotoperfil {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    border: 6px #C6AD89 solid;
+    margin-top: 15%;
+}
+
+div#LateralEsquerda nav#menu h2 {
+    margin-top: 40%;
+    font-size: 13pt;
+    color: #C6AD89;
+    list-style: none;
+    line-height: 30%;
+}
+
+div#LateralEsquerda nav#menu ul a {
+    text-decoration: none;  
+    font-size: 80%;
+    color: #8C8E93;
+    text-transform: uppercase;
+}
+
+
+div#LateralEsquerda nav#menu ul a:hover {
+    color:#66686b;
+}
+
+
+
+#tracoDiferente {
+    margin-top: 14%;
+    border-top: 1px solid #C6AD89;
+    margin-bottom: 14%;
+}
+
+hr {
+    margin-top: 14%;
+    border-top: 1px solid #999999;
+    margin-bottom: 14%;
 }
 
 div#LateralDireita {
-    height: 100%;
     width: 73%;
     display: flex;
 }
 
-div#tela {
-    height: 100%;
-    width:100%;
-    display: flex;
-    height: 100%;
-}
-
-/*div#LateralDireita li {
-    color: rgb(255, 255, 255);
-    list-style: none;
-    position: relative;
-    top: 50px;
-    left: 190px;
-    background-color: #999999;
-}
-
-div#retangulo {
-    width: 1335px;
-    font-size: 0;
-    height: 19px;
-    background-color: #C6AD89;
-    margin-top: 50px;
-    margin-left: 25px;
-    display: flex;
-    position: relative;
-    left: 3%;
-    border-radius: 7px;
-}
-
-div#retanguloMyList {
-    width: 499px;
-    height: 19px;
-    background-color: #C6AD89;
-    margin-top: 50px;
-    margin-left: 35px;
-    display: flex;
-    position: relative;
-    left: -9%;
-    border-radius: 7px;
-}
-
-div#retanguloMyList h1{
-    display: flex;
-    position: relative;
-    left: -7%;
-    top:0px;
-    font-size: 12pt;
-    color: #fcfaf8;
-}*/
 
 div#LateralDireita h1{
 
-    margin-top: 0px;
-    margin-left: 62px;
+    margin-top: 0%;
+    margin-left: 62%;
     font-family: 'Roboto', sans-serif;
-    font-size: 13pt;
+    font-size: 20%;
     color: #fcfaf8;
     list-style: none;
     border-radius: 7px;
     bottom: 2%;
 }
 
-#fotoperfil {
-    width: 165px;
-    height: auto;
-    border-radius: 50%;
-    top: 50px;
-    left: 50px;
-    border: 6px #C6AD89 solid;
-    margin-top: 30px;
+div#LateralDireita div#localimagens {
+    background-color: #72727209;
+    border-radius: 1%;
+    position: relative;
+    width: 93%;
+    top: 85px;
+    left: -12px;
+    height: 80%;
+    overflow-y: auto;
 }
 
-nav#menu ul {
-    font-family: 'Roboto', sans-serif;
-    font-size: 10pt;
-    color: #8C8E93;
-    text-transform: uppercase;
-    list-style: none;
-    left: 35px;
-    top: -1px;
-
+::-webkit-scrollbar {
+    width: 11px;
+    border-radius: 1%;
+}
+::-webkit-scrollbar-track {
+    background-color: #7272721c;
+}
+::-webkit-scrollbar-button {
+    background-color: #72727221;
+    border-radius: 2%;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #72727221;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #72727256;
 }
 
-#tracoDiferente {
-    margin-top: 14px;
-    border-top: 1px solid #C6AD89;
-    margin-bottom: 14px;
+div#imagens {
+    display: inline-block;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    /* position: relative; */
+    /* left: 39px; */
+    margin-left: 22px;
 }
 
-hr {
-    margin-top: 14px;
-    border-top: 1px solid #999999;
-    margin-bottom: 14px;
+div#imagens div#box {
+    margin: 22px;
+    margin-top: 20px;
+    text-align: center;
+    display: inline-block;
 }
 
-div#LateralEsquerda h2 {
-    margin-top: 40px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 13pt;
+div#imagens div#box:hover {
+    width: 124px;
+}
+
+div#imagens div#box img {
+    width: 120px;
+    height: 120px;
+    border-radius: 16%;
+    border: 5px #FFFFFF solid;
+    box-shadow: 1px 1px 1px 1px rgb(194, 190, 184);
+    
+}
+
+div#imagnes div#box ,h4 {
     color: #C6AD89;
-    list-style: none;
-    text-align: justify;
-    line-height: 29px;
-    bottom: 2px;
-    top: 20px;
+    font-size: 17px;
 }
 
-div#LateralDireita #fotoEvento {
-    width: 135px;
-    height: 122px;
-    border-radius: 14%;
-    position: relative;
-    left: 422px;
-    border: 6px #FFFFFF solid;
-    margin: 6rem 3rem 4rem 7rem;
-}
-
-div#LateralDireita #fotoEvento2 {
-    width: 135px;
-    height: 122px;
-    border-radius: 14%;
-    position: relative;
-    left: 974px;
-    border: 6px #FFFFFF solid;
-    margin: 6rem 3rem 4rem 7rem;
-    margin-top: 293px;
-}
-
-div#LateralDireita h2 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 13pt;
-    color: #C6AD89;
-    position: relative;
-    left: 131px;
-    margin: 14rem -36rem 1rem 7rem;
-}
-
-div#LateralDireita #nome2 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 13pt;
-    color: #C6AD89;
-    position: relative;
-    left: 682px;
-    margin: 26rem -36rem 1rem 7rem;
-}
-
-div#LateralDireita h3 {
-    margin-top: 244px;
-    margin-left: -137px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 11pt;
+div#imagnes div#box ,p {
     color: #727272;
-    position: relative;
-    left: 716px;
+    font-size: 13px;
 }
 
-div#LateralDireita #nomeEvento2 {
-    margin-top: 435px;
-    margin-left: -137px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 11pt;
-    color: #727272;
-    position: relative;
-    left: 1268px;
-}
-
-div#LateralDireita h4 {
-    margin-top: 247px;
-    margin-left: -137px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 9pt;
-    color: #727272;
-    position: relative;
-    left: 854px;
-    display: flex;
-}
-
-div#LateralDireita #data2 {
-    margin-top: 438px;
-    margin-left: -137px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 9pt;
-    color: #727272;
-    position: relative;
-    left: 1406px;
-    display: flex;
-}
     
 div#retangulo {
     width: 750px;
@@ -233,11 +176,19 @@ div#MyList {
     margin: 3rem -33rem 1rem 1rem;
 }
 
-div#MyList h1 {
+div#MyList a {
     display: flex;
-    position: relative;
-    left: -3%;
-    top: 1px;
+    padding: 0px 0px 0px 10px;
     font-size: 15pt;
-    color: #fcfaf8;
+    color: #FFFFFF;
+    text-decoration: none;
+    position: relative;
+    left: 46px;
+    font-style: unset;
+    text-decoration: b;
+}
+
+div#MyList:hover
+{
+    background-color: #b89c78;
 }
