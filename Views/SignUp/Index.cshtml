@@ -5,35 +5,43 @@
 
 @section CSS
 {
-    <link rel="stylesheet" href="~/css/signup.css"/>
+    <link rel="stylesheet" href="~/css/signup.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"  />
 }
 
 <div class="signup">
-    <h1>Criar uma conta</h1>
-    
-    <form asp-controller="SignUp" asp-action="Index" method="post">
-        <div asp-validation-summary="ModelOnly"></div>
-
-        <label>
-            Nome
-            <input type="text" asp-for="Name" placeholder="Fulano"/>
-            <span asp-validation-for="Name"></span>
-        </label>
-        <label>
-            Email
-            <input type="email" asp-for="Email" placeholder="seu.email@exemplo.com"/>
-            <span asp-validation-for="Email"></span>
-        </label>
-        <label>
-            Senha
-            <input type="password" asp-for="Password"/>
-            <span asp-validation-for="Password"></span>
-        </label>
-
+    <img style="height: 5.5rem" class="mb-4" src="~/img/brand.svg" alt="presente.ie" />
+    <form class="w-100" asp-controller="SignUp" asp-action="Index" method="post">
+        <div class="mb-3">
+            <label for="email" class="font-weight-bold m-0">E-mail</label>
+            <input style="border-radius: 8px" type="email" class="form-control py-4" asp-for="Email" placeholder="digite seu e-mail" id="email">
+            <div class="invalid-feedback" style="display:block;">
+                <span asp-validation-for="Email"></span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="name" class="font-weight-bold m-0">Nome</label>
+            <input style="border-radius: 8px" class="form-control py-4" asp-for="Name" placeholder="digite seu nome" id="name">
+            <div class="invalid-feedback" style="display:block;">
+            <div class="invalid-feedback" style="display:block;">
+                <span asp-validation-for="Name"></span>
+            </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="font-weight-bold m-0">Senha</label>
+            <input style="border-radius: 8px" type="password" class="form-control py-4" asp-for="Password" placeholder="digite sua senha" id="password">
+            <div class="invalid-feedback" style="display:block;">
+                <span asp-validation-for="Password"></span>
+            </div>
+        </div>
+        <div class="mb-3 d-none">
+            <label for="repeat-password" class="font-weight-bold m-0">Digite novamente a senha</label>
+            <input style="border-radius: 8px" type="password" class="form-control py-4" placeholder="digite sua senha" id="repeat-password">
+        </div>
         <button type="submit">Cadastrar-se</button>
     </form>
-
-    <a asp-controller="Login" asp-action="Index">Já possui uma conta?</a>
+    <a class="text-center" asp-controller="Login" asp-action="Index" id="login-link">Já possui uma conta?</a>
 </div>
 
 @section Scripts
