@@ -1,0 +1,40 @@
+@model Presenteie.Models.List
+
+@{
+    ViewData["Title"] = "Criar lista";
+}
+
+@section CSS
+{
+    <link rel="stylesheet" href="~/css/registerlis.css"/>
+}
+
+<body>
+<div class="registerlist">
+
+    <hr>
+    <form>
+        <div>
+            <p>Insira sua capa</p>
+            <input type="file" name="image" accept="image/jpeg">
+        </div>
+        <div id="theme">
+            <p>Selecione a comemoração</p>
+            <select>Selecione</select>
+        </div>
+
+        <div id="date">
+            <p>Data do evento</p>
+            <input type="date"/>
+        </div>
+
+        <div id="description">
+            <p>Descrição do evento</p>
+            <input type="text">
+        </div>
+
+        <button type="submit">Cadastrar lista</button>
+    </form>
+    
+</div>
+</body>
