@@ -185,7 +185,7 @@ div#MyList a {
     position: relative;
     left: 46px;
     font-style: unset;
-    text-decoration: b;
+    text-decoration: none;
 }
 
 div#MyList:hover
