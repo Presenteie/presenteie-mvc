@@ -2,20 +2,27 @@
 
 ## Requirements
 * .NET 5.0+
-* Postgres 13+
+* MySQL 8.0+
 
 ## Database
-Run an image of Postgresql in Docker: 
+Run an image of MySQL in Docker: 
 ```shell
-docker run -p 5432:5432 --name presenteie-db -e POSTGRES_USER=user  -e POSTGRES_PASSWORD=password -e POSTGRES_DB=presenteie postgres
+docker run -p 3306:3306 --name presenteie-mysql -e MYSQL_ROOT_PASSWORD=superpassword -e MYSQL_DATABASE=presenteie -e MYSQL_USER=user -e MYSQL_PASSWORD=password -d mysql
 ```
 
 Or set up an instance yourself. Default settings:
 * Host: `localhost`
-* Port: `5432`
+* Port: `3306`
 * Database: `presenteie`
 * User: `user`
 * Password: `password`
+
+```sql
+CREATE DATABASE presenteie;
+CREATE USER 'user'@'%' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON presenteie.* to 'user'@'%';
+FLUSH PRIVILEGES;
+```
 
 You can also change it by editing **appsettings.json**
 

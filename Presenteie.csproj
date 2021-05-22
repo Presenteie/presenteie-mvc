@@ -17,8 +17,9 @@
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
       <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
-        <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.0" />
-        <PackageReference Include="Pomelo.EntityFrameworkCore.MySql.Design" Version="1.1.2" />
+      <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.0" />
+      <PackageReference Include="Pomelo.EntityFrameworkCore.MySql.Design" Version="1.1.2" />
+      <PackageReference Include="RestSharp" Version="106.11.7" />
     </ItemGroup>
 
     <ItemGroup>
@@ -35,10 +36,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <_ContentIncludedByDefault Remove="Views\ItemEdit\Index.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\ItemsList\Index.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\ItemsEdit\Index.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\RegisterLis\index.cshtml" />
+
+      <_ContentIncludedByDefault Remove="Views\Password\Reset\index.cshtml" />
+
     </ItemGroup>
 
     <ItemGroup>

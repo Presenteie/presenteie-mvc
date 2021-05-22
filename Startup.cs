@@ -23,16 +23,16 @@ namespace Presenteie
         public void ConfigureServices(IServiceCollection services)
         {
             var connectionString = Configuration.GetConnectionString("PresenteieContext");
-
+                
             var serverVersion = new MySqlServerVersion(new Version(8, 0, 21));
-
+            
             services.AddDbContextPool<PresenteieContext>(dbContextOptions => 
-                    dbContextOptions
-                        .UseMySql(connectionString, serverVersion)
-                        .EnableSensitiveDataLogging() // (remove for production)
-                        .EnableDetailedErrors() // (remove for production)
+                dbContextOptions
+                    .UseMySql(connectionString, serverVersion)
+                    .EnableSensitiveDataLogging() // (remove for production)
+                    .EnableDetailedErrors() // (remove for production)
             );
-
+            
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options =>
                 {
