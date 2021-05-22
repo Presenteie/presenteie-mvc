@@ -38,6 +38,7 @@
       <_ContentIncludedByDefault Remove="Views\ItemEdit\Index.cshtml" />
       <_ContentIncludedByDefault Remove="Views\ItemsList\Index.cshtml" />
       <_ContentIncludedByDefault Remove="Views\ItemsEdit\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\RegisterLis\index.cshtml" />
     </ItemGroup>
 
     <ItemGroup>
