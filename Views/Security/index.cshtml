@@ -1,0 +1,20 @@
+@{
+    ViewBag.Title = "Redefinir Senha";
+}
+
+@section CSS
+{
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"  />
+}
+
+<div class="container d-flex flex-column justify-content-center">
+    <h1 class="mb-0">Redefinir Senha</h1>
+    <p>Digite seu email para que possamos te auxiliar a redefinir a senha.</p>
+    <form asp-controller="Security" asp-action="Index" method="post">
+        <div class="mb-3">
+            <label for="email" class="font-weight-bold m-0" style="color: #767676;">E-mail</label>
+            <input name="email" id="email" type="email" class="form-control" autocomplete="off">
+        </div>
+        <button class="btn" style="background: #767676 !important; color: #FFFFFF;">Confirmar</button>
+    </form>
+</div>

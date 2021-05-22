@@ -61,12 +61,15 @@
     border-radius: 5px;
 }
 
+#login-link {
+    font-size: 20px;
+    text-shadow: 0 0 4px black;
+    font-weight: 500;
+    color: white;
+    margin: 10px auto;
+}
+
 .signup a {
-    /*font-size: 20px;*/
-    /*text-shadow: 0 0 4px black;*/
-    /*font-weight: 500;*/
-    /*color: white;*/
-    /*margin: 10px auto;*/
     text-decoration: none;
     color: #8C8E93;
 }
