@@ -18,8 +18,6 @@ namespace Presenteie.Models
         
         [Required(ErrorMessage = "A senha é obrigatória")]
         public string Password { get; set; }
-        
-        public List<List> List { get; set; } 
     }
     
     public class UserCredentials

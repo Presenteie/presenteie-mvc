@@ -1,0 +1,30 @@
+
+
+@section CSS
+{
+    <link rel="stylesheet" href="~/css/site.css"/>
+}
+
+@{
+    ViewData["Title"] = "Lista";
+    
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+<div>
+    <form asp-controller="ItemsList" method="post">
+        <label>Text</label>
+        <input type="text" name="message">
+        <button type="submit">Enviar</button>
+    </form>
+</div>
+</body>
+</html>

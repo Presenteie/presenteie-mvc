@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Presenteie;
 
 namespace Presenteie.Migrations
 {
     [DbContext(typeof(PresenteieContext))]
-    partial class PresenteieContextModelSnapshot : ModelSnapshot
+    [Migration("20210517210020_Items")]
+    partial class Items
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,12 +29,12 @@ namespace Presenteie.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<long>("IdList")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("Link")
                         .IsRequired()
                         .HasColumnType("longtext");
-
-                    b.Property<long?>("ListIdUser")
-                        .HasColumnType("bigint");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -60,11 +62,6 @@ namespace Presenteie.Migrations
 
                     b.Property<DateTime>("EventDate")
                         .HasColumnType("datetime(6)");
-                    b.Property<int>("Date")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ThemeList")
-                        .HasColumnType("int");
 
                     b.Property<long>("IdUser")
                         .HasColumnType("bigint");
@@ -75,30 +72,6 @@ namespace Presenteie.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Lists");
-                });
-
-            modelBuilder.Entity("Presenteie.Models.Security", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<DateTime>("ExpiresAt")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("Hash")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<long>("UserId")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Security");
                 });
 
             modelBuilder.Entity("Presenteie.Models.User", b =>
