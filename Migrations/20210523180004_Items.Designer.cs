@@ -9,8 +9,8 @@ using Presenteie;
 namespace Presenteie.Migrations
 {
     [DbContext(typeof(PresenteieContext))]
-    [Migration("20210513035849_Initial")]
-    partial class Initial
+    [Migration("20210523180004_Items")]
+    partial class Items
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,7 +21,7 @@ namespace Presenteie.Migrations
 
             modelBuilder.Entity("Presenteie.Models.Item", b =>
                 {
-                    b.Property<long>("IdList")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
@@ -29,12 +29,12 @@ namespace Presenteie.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<long>("IdList")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("Link")
                         .IsRequired()
                         .HasColumnType("longtext");
-
-                    b.Property<long?>("ListIdUser")
-                        .HasColumnType("bigint");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -43,33 +43,59 @@ namespace Presenteie.Migrations
                     b.Property<decimal>("Value")
                         .HasColumnType("decimal(65,30)");
 
-                    b.HasKey("IdList");
+                    b.Property<int>("state")
+                        .HasColumnType("int");
 
-                    b.HasIndex("ListIdUser");
+                    b.HasKey("Id");
 
                     b.ToTable("Items");
                 });
 
             modelBuilder.Entity("Presenteie.Models.List", b =>
                 {
-                    b.Property<long>("IdUser")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    b.Property<int>("Date")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("EventDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<long>("IdUser")
+                        .HasColumnType("bigint");
 
                     b.Property<int>("ThemeList")
                         .HasColumnType("int");
 
-                    b.Property<long?>("UserId")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("IdUser");
-
-                    b.HasIndex("UserId");
+                    b.HasKey("Id");
 
                     b.ToTable("Lists");
+                });
+
+            modelBuilder.Entity("Presenteie.Models.Security", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("ExpiresAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Hash")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Security");
                 });
 
             modelBuilder.Entity("Presenteie.Models.User", b =>
@@ -93,30 +119,6 @@ namespace Presenteie.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("Presenteie.Models.Item", b =>
-                {
-                    b.HasOne("Presenteie.Models.List", null)
-                        .WithMany("ItemList")
-                        .HasForeignKey("ListIdUser");
-                });
-
-            modelBuilder.Entity("Presenteie.Models.List", b =>
-                {
-                    b.HasOne("Presenteie.Models.User", null)
-                        .WithMany("List")
-                        .HasForeignKey("UserId");
-                });
-
-            modelBuilder.Entity("Presenteie.Models.List", b =>
-                {
-                    b.Navigation("ItemList");
-                });
-
-            modelBuilder.Entity("Presenteie.Models.User", b =>
-                {
-                    b.Navigation("List");
                 });
 #pragma warning restore 612, 618
         }
