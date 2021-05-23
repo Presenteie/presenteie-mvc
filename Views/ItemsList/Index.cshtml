@@ -1,19 +1,35 @@
-
+@{
+    ViewData["Title"] = "Home";
+}
 
 @section CSS
 {
-    <link rel="stylesheet" href="~/css/site.css"/>
+    <link rel="stylesheet" href="~/css/home.css">
 }
 
-@{
-    ViewData["Title"] = "Lista";
-    
-}
+<body>     
+        <div id="rightSide">
+            <img id="profilePhoto" src="img/4foto.png">
 
-<div>
-    <form asp-controller="ItemsList" method="post">
-        <label>Text</label>
-        <input type="text" name="message">
-        <button type="submit">Enviar</button>
-    </form>
-</div>
+            <nav id="menu">     
+                <h2><li>Informações</li></h2>
+                <hr id= "tracoDiferente">
+                <ul>
+                <a href="#">Minha Lista</a>
+                <hr>
+                <a href="#">Meus Presentes</a>
+                <hr>
+                <a href="#">Configurações</a>
+                <hr>
+                <a href="#">Sair</a>
+                <hr>
+                </ul>
+            </nav> 
+        </div>
+
+        <div id= "LateralDireita">
+            <div id="MyList">
+            <a href="#"> <strong>+ Criar Lista</strong> </a>
+            </div>
+        </div>
+</body>

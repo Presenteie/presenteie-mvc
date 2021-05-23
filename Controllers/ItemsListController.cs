@@ -6,7 +6,7 @@ using Presenteie.Models;
 
 namespace Presenteie.Controllers
 {
-    [Authorize]
+    /// [Authorize]
     public class ItemsListController : Controller
     {
         // GET
