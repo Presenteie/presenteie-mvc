@@ -27,12 +27,12 @@ namespace Presenteie.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<long>("IdList")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("Link")
                         .IsRequired()
                         .HasColumnType("longtext");
-
-                    b.Property<long?>("ListIdUser")
-                        .HasColumnType("bigint");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -60,11 +60,6 @@ namespace Presenteie.Migrations
 
                     b.Property<DateTime>("EventDate")
                         .HasColumnType("datetime(6)");
-                    b.Property<int>("Date")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ThemeList")
-                        .HasColumnType("int");
 
                     b.Property<long>("IdUser")
                         .HasColumnType("bigint");

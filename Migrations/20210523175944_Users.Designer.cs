@@ -9,8 +9,8 @@ using Presenteie;
 namespace Presenteie.Migrations
 {
     [DbContext(typeof(PresenteieContext))]
-    [Migration("20210517210020_Items")]
-    partial class Items
+    [Migration("20210523175944_Users")]
+    partial class Users
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -72,6 +72,30 @@ namespace Presenteie.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Lists");
+                });
+
+            modelBuilder.Entity("Presenteie.Models.Security", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("ExpiresAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Hash")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Security");
                 });
 
             modelBuilder.Entity("Presenteie.Models.User", b =>
