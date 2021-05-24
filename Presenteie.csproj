@@ -25,6 +25,7 @@
     <ItemGroup>
       <Compile Remove="Models\Credentials.cs" />
       <Compile Remove="Repositories\**" />
+      <Compile Remove="Controllers\RegisterItem.cs" />
     </ItemGroup>
 
     <ItemGroup>
