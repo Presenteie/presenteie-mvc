@@ -1,4 +1,7 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
+using System.Linq;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Presenteie.Models;
@@ -8,8 +11,20 @@ namespace Presenteie.Controllers
     [Authorize]
     public class HomeController : Controller
     {
+        private readonly PresenteieContext _context;
+
+        public HomeController(PresenteieContext presenteieContext)
+        {
+            _context = presenteieContext;
+        }
+
+        [HttpGet]
         public IActionResult Index()
         {
+            var userId = int.Parse(User.Claims.FirstOrDefault(claim => claim.Type == ClaimTypes.NameIdentifier)?.Value ?? string.Empty);
+            var lists = _context.Lists.Where(list => userId.Equals(userId));
+            
+            ViewBag.lists = lists;
             return View();
         }
         
