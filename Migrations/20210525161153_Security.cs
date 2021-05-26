@@ -2,7 +2,7 @@
 
 namespace Presenteie.Migrations
 {
-    public partial class Items : Migration
+    public partial class Security : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -1,0 +1,221 @@
+body main {
+    margin: auto;
+    height: 92.8%;
+    background-color: #c4c4c433;
+    --background-color-right-side: #c4c4c48e;
+    --color-shadow: #8c8e93;
+    --image-border-color: #C6AD89;
+    --color-h2: #C6AD89;
+    --color-text: #8C8E93;
+    --color-text-hover: #66686b;
+}
+
+div#lefttSide {
+    display: flex;
+    flex-direction: column;
+    width: 22%;
+    place-items: center;
+    background-color: var(--background-color-right-side);
+    box-shadow: 4px 5px 13px var(--color-shadow);
+    text-align: center;
+}
+
+div#lefttSide img {
+    width: 60%;
+    height: 30%;
+    border-radius: 50%;
+    border: 6px var(--image-border-color) solid;
+    margin-top: 15%; 
+}
+
+div#lefttSide nav#menu h2 {
+    margin-top: 40%;
+    font-size: 13pt;
+    color: var(--color-h2);
+    list-style: none;
+    line-height: 30%;
+}
+
+div#lefttSide nav#menu ul {
+    margin-top: 15%;
+}
+
+div#lefttSide nav#menu ul hr {
+    margin-top: 14%;
+    border-top: 1px solid #999999;
+    margin-bottom: 14%;
+}
+
+div#lefttSide nav#menu ul a {
+    text-decoration: none;
+    font-size: 80%;
+    color: var(--color-text);
+    text-transform: uppercase;
+}
+
+div#lefttSide nav#menu ul a:hover {
+    color: var(--color-text-hover);
+}
+
+div#rightside {
+    width: 78%;
+    display: flex;
+    flex-direction: column;
+}
+
+div#rightside div#MyList {
+    display: flex;
+    height: 7%;
+    width: 83%;
+    margin: 2.5% 0 0 3.4%;
+    align-items: center;
+}
+
+div#rightside div#MyList hr {
+    width: 73%;
+    height: 27px;
+    border-radius: 7px;
+    background-color: var(--image-border-color); 
+    border: 0;
+}
+
+div#rightside div#MyList a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    background-color: var(--image-border-color);
+    margin-left: auto;
+    width: 20%;
+    height: 27px;
+    border-radius: 7px;
+    font-size: 15pt;
+    padding-left: 40px;
+}
+
+div#rightside div#MyList a:hover {
+    background-color: #b89c78;
+}
+
+div#rightside img {
+    margin-left: 4%;
+    object-fit: contain;
+    width: 55%;
+    border: 8px white solid;
+    border-radius: 10px;
+}
+
+div#rightside div#createItem {
+    display: flex;
+    align-items: center;
+    margin: 1% 4%;
+    width: 55%;
+}
+
+div#rightside div#createItem h1 {
+    color: var(--color-h2);
+}
+
+div#rightside div#createItem form {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    margin-left: 65%;
+}
+
+div#rightside div#createItem button {
+    width: 20%;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 1px 1px 1px 1px var(--color-text);
+    margin-left: 5%;
+}
+
+div#rightside p {
+    color: var(--color-text);
+    margin-left: 4%;
+}
+
+div#rightside div#item {
+    margin: 1.5% 4%;
+    display: flex;
+    background-color: white;
+    width: 40%;
+    border-radius: 10px;
+    box-shadow: 4px 5px 13px var(--color-shadow);
+}
+
+div#rightside div#item img {
+    margin: 5px;
+    object-fit: contain;
+    border: 3px var(--color-h2) solid;
+    border-radius: 4px;
+    width: 135px;
+    height: 100px;
+}
+
+div#rightside div#item div#top form {
+    display: flex;
+}
+
+div#rightside div#item div#top form button {
+    background-color: #E5E5E5;
+    width: 4%;
+    height: 70%;
+    border-radius: 50%;
+    margin-left: auto;
+}
+
+div#rightside div#item div#top form button h5 {
+    color: var(--color-h2);
+}
+
+div#rightside div#item div#values {
+    width: 100%;
+    margin: 0.5% 1%;
+}
+
+div#rightside div#item div#values h3 {
+    color: var(--color-h2);
+}
+
+div#rightside div#item div#values p {
+    margin: 0;
+}
+
+div#rightside div#item div#values a {
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+div#rightside div#item button {
+    margin: 0.5%;
+    background-color: white;
+    border: none;
+}
+
+div#rightside div#item button img {
+    width: 15px;
+    height: 15px;
+    border: none;
+}
+
+div#rightside div#item div#down form {
+    margin-top: 7%;
+    display: flex;
+    align-items: center;
+}
+
+div#rightside div#item div#down form button {
+    display: flex;
+    margin-left: auto;
+    font-size: 10px;
+    align-items: center;
+}
+
+div#rightside div#item div#down form p {
+    font-size: 10px;
+    margin: 3px;
+}

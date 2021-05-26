@@ -27,22 +27,27 @@ namespace Presenteie.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<long>("IdList")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("Link")
                         .IsRequired()
                         .HasColumnType("longtext");
-
-                    b.Property<long?>("ListIdUser")
-                        .HasColumnType("bigint");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<decimal>("Value")
-                        .HasColumnType("decimal(65,30)");
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(15)");
 
-                    b.Property<int>("state")
-                        .HasColumnType("int");
+                    b.Property<string>("StoreName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<decimal>("Value")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
@@ -58,19 +63,19 @@ namespace Presenteie.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<DateTime>("EventDate")
                         .HasColumnType("datetime(6)");
-                    b.Property<int>("Date")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ThemeList")
-                        .HasColumnType("int");
 
                     b.Property<long>("IdUser")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("ThemeList")
-                        .HasColumnType("int");
+                    b.Property<string>("ThemeList")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(15)");
 
                     b.HasKey("Id");
 

@@ -20,11 +20,16 @@ namespace Presenteie.Models
         public string Description { get; set; }
        
         [Required]
+        [Column(TypeName = "decimal(18,2)")]
         public Decimal Value { get; set; }
         
         [Required]
-        public State state { get; set; }
+        [Column(TypeName = "nvarchar(15)")]
+        public State State { get; set; }
        
+        [Required]
+        public String StoreName { get; set; }
+        
         [Required]
         public string Link { get; set; }
     }
