@@ -55,44 +55,41 @@
         
         @foreach (Item item in @items)
         {
-            @if ( @userId == list.IdUser && list.Id == item.IdList)
-            {
-                <div id="item">
-                    <img src="img/unnamed.png">
-                    <div id="values">
-                        <div id="top">
-                            <form name="idItem" asp-controller="ItemsList" asp-action="Delete" method="post" asp-route-idItem="@item.Id">
-                                <h3>@item.Name</h3>
-                                <input name="idItem" type="hidden" value="@item.Id">
-                                <button type="submit">
-                                    <h5>X</h5>
-                                </button>
-                            </form>
-                        </div>
-                        
-                        <h5>@item.Description | <a href="@item.Link">@item.StoreName</a></h5>
-                        <div id="down">
-                            <form method="post" asp-controller="RegisterItemController">
-                                <p>R$ @item.Value</p>
-                                <input name="idItem" type="hidden" value="@item.Id">
-                                <button type="submit">
-                                    <p>Edit</p>
-                                    <img src="img/pencil.png">
-                                </button>
-                                <p>Comprado</p>
-                                @if (@item.State == State.Purchase)
-                                {
-                                    <input type="checkbox">
-                                }
-                                else
-                                {
-                                    <input type="checkbox" checked> 
-                                }
-                            </form>
-                        </div>
+            <div id="item">
+                <img src="img/unnamed.png">
+                <div id="values">
+                    <div id="top">
+                        <form name="idItem" asp-controller="ItemsList" asp-action="Delete" method="get" asp-route-idItem="@item.Id">
+                            <h3>@item.Name</h3>
+                            <input name="idItem" type="hidden" value="@item.Id">
+                            <button type="submit">
+                                <h5>X</h5>
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <h5>@item.Description | <a href="@item.Link" target="_blank">@item.StoreName</a></h5>
+                    <div id="down">
+                        <form method="post" asp-controller="RegisterItemController" asp-action="Edit" asp-route-idItem="@item.Id">
+                            <p>R$ @item.Value</p>
+                            <input name="idItem" type="hidden" value="@item.Id">
+                            <button type="submit">
+                                <p>Edit</p>
+                                <img src="img/pencil.png">
+                            </button>
+                            <p>Comprado</p>
+                            @if (@item.State == State.Purchase)
+                            {
+                                <input type="checkbox">
+                            }
+                            else
+                            {
+                                <input type="checkbox" checked> 
+                            }
+                        </form>
                     </div>
                 </div>
-            }
+            </div>
         }
     </div>
 

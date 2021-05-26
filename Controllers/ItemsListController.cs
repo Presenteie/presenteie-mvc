@@ -1,14 +1,16 @@
 using System;
 using System.Linq;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Presenteie.Migrations;
 using Presenteie.Models;
 
 namespace Presenteie.Controllers
-{
-    /// [Authorize]
+{ 
+    [Authorize]
     public class ItemsListController : Controller
     {
         private readonly PresenteieContext _context;
@@ -17,43 +19,90 @@ namespace Presenteie.Controllers
         {
             _context = presenteieContext;
         }
-        
-        // GET
-        [HttpGet]
-        public IActionResult Index([FromForm] long idList)
+
+        [HttpGet("ItemsList/{idList}")]
+        public IActionResult Index(long idList)
         {
-            idList = 1;
+            var lists = _context.Users.Join(
+                _context.Lists,
+                user => user.Id,
+                list => list.IdUser,
+                (user, list) => list
+            ).ToList();
+            
             var items = _context.Lists.Join(
                 _context.Items,
                 list => list.Id,
                 item => item.IdList,
                 (list, item) => item
             ).ToList();
-            
-            var list = _context.Lists.Where(list1 => list1.Id == idList).First();
 
-            ViewBag.UserName = User.Identity.Name;
-            ViewBag.UserId = long.Parse(User.Claims.FirstOrDefault(claim => claim.Type == "Id")?.Value);
-            ViewBag.Items = items;
-            ViewBag.List = list;
-            return View();
+            var UserId = long.Parse(User.Claims.FirstOrDefault(claim => claim.Type == "Id")?.Value);
+            var list = lists.Where(list1 => list1.Id == idList && list1.IdUser == UserId).FirstOrDefault();
+
+            if (list != null)
+            {
+                items = items.Where(item => item.IdList == list.Id).ToList();
+                if (list.IdUser == UserId)
+                {
+                    ViewBag.UserName = User.Identity.Name;
+                    ViewBag.UserId = UserId;
+                    ViewBag.Items = items;
+                    ViewBag.List = list;
+                    return View();
+                }
+            }
+            return RedirectToRoute(new
+            {
+                controller = "Home",
+                action = "Index"
+            });
         }
 
-        [HttpPost("{idItem}")]
-        public IActionResult Delete(long idItem)
+        [HttpGet("ItemsList/Delete/{idItem}")]
+        public IActionResult Delete([FromRoute] long idItem)
         {
+            var lists = _context.Users.Join(
+                _context.Lists,
+                user => user.Id,
+                list => list.IdUser,
+                (user, list) => list
+                ).ToList();
+           
             var items = _context.Lists.Join(
                 _context.Items,
                 list => list.Id,
                 item => item.IdList,
                 (list, item) => item
             ).ToList();
-            var item = items.Where(item => item.Id == idItem).First();
             
-            Console.WriteLine(item.Id);
-            _context.Remove(item);
-            _context.SaveChanges();
-            return RedirectToAction("Index");
+            var item = items.Where(item => item.Id == idItem).FirstOrDefault();
+
+            if (item != null)
+            {
+                var list = lists.Where(list => list.Id == item.IdList).FirstOrDefault();
+                var UserId = long.Parse(User.Claims.FirstOrDefault(claim => claim.Type == "Id")?.Value);
+
+
+                if (list.IdUser == UserId)
+                {
+                    _context.Remove(item);
+                    _context.SaveChanges();
+                }
+
+                return RedirectToRoute(new
+                {
+                    controller = "ItemsList",
+                    action = "Index",
+                    idList = list.Id
+                });
+            }
+
+            return RedirectToRoute(new
+            {
+                controller = "Home",
+                action = "index"
+            });
         }
     }
 }
