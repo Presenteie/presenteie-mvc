@@ -1,12 +1,6 @@
-using System;
 using System.Linq;
-using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Presenteie.Migrations;
-using Presenteie.Models;
 
 namespace Presenteie.Controllers
 { 
@@ -46,7 +40,6 @@ namespace Presenteie.Controllers
                 if (list.IdUser == UserId)
                 {
                     ViewBag.UserName = User.Identity.Name;
-                    ViewBag.UserId = UserId;
                     ViewBag.Items = items;
                     ViewBag.List = list;
                     return View();
@@ -75,7 +68,7 @@ namespace Presenteie.Controllers
                 item => item.IdList,
                 (list, item) => item
             ).ToList();
-            
+
             var item = items.Where(item => item.Id == idItem).FirstOrDefault();
 
             if (item != null)
@@ -102,6 +95,17 @@ namespace Presenteie.Controllers
             {
                 controller = "Home",
                 action = "index"
+            });
+        }
+
+        [HttpPost("ItemsList/Create/{idList}")]
+        public IActionResult Create(long id)
+        {
+            return RedirectToRoute(new
+            {
+                controller = "RegisterItem",
+                action = "Index",
+                idList = id
             });
         }
     }

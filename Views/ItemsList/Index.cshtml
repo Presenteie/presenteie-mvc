@@ -3,7 +3,6 @@
     ViewData["Title"] = "Itens";
     var items = ViewBag.Items;
     var userName = ViewBag.UserName;
-    var userId = ViewBag.UserId;
     var list = ViewBag.List;
     
 }
@@ -42,7 +41,7 @@
         
         <div id="createItem">
             <h1>@userName</h1>
-            <form name="list" method="post" asp-controller="RegisterItemController">
+            <form name="id" method="post" asp-controller="ItemsList" asp-action="Create" asp-route-id="@list.Id">
                 <p>Adicionar item</p>
                 <input name="idList" type="hidden" value="@list.Id">
                 <button type="submit">
