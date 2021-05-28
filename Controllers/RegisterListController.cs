@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Presenteie.Models;
 using System;
 using System.Security.Claims;
+using System.Linq;
 
 namespace Presenteie.Controllers
 {
@@ -23,10 +24,12 @@ namespace Presenteie.Controllers
         [HttpPost]
         public IActionResult Index([FromForm] List list)
         {
-            var userId = int.Parse(User.Claims.FirstOrDefault(claim => claim.Type == ClaimTypes.NameIdentifier)?.Value ?? string.Empty);
-            //list.IdUser = int.Parse(userId);
+            var userId = User.Claims.FirstOrDefault(claim => claim.Type == ClaimTypes.NameIdentifier)?.Value ?? string.Empty;
+            list.IdUser = int.Parse(userId);
             //_context.Lists.Add(list);
             return View();
         }
+
+
     }
 }
