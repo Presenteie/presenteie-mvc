@@ -1,30 +1,95 @@
-
-
-@section CSS
-{
-    <link rel="stylesheet" href="~/css/site.css"/>
-}
-
+@using Presenteie.Models.Enum
 @{
-    ViewData["Title"] = "Lista";
+    ViewData["Title"] = "Itens";
+    var items = ViewBag.Items;
+    var userName = ViewBag.UserName;
+    var list = ViewBag.List;
     
 }
 
-<!DOCTYPE html>
-
-<html>
-
-<head>
-
-</head>
+@section CSS
+{
+    <link rel="stylesheet" href="~/css/itemslist.css">
+}
 
 <body>
-<div>
-    <form asp-controller="ItemsList" method="post">
-        <label>Text</label>
-        <input type="text" name="message">
-        <button type="submit">Enviar</button>
-    </form>
-</div>
+    <div id="lefttSide">
+        <img src="img/4foto.png">
+
+        <nav id="menu">     
+            <h2><li>Informações</li></h2>
+            <ul>
+                <hr>
+                <a href="#">Minhas Listas</a>
+                <hr>
+                <a href="#">Meus Presentes</a>
+                <hr>
+                <a href="#">Configurações</a>
+                <hr>
+                <a href="#">Sair</a>
+                <hr></ul>
+        </nav>
+    </div>
+
+    <div id="rightside">
+        <div id="MyList">
+            <hr>
+            <a href="#"> <strong>+ Criar Lista</strong> </a>
+        </div>
+        
+        <img src="https://via.placeholder.com/342x75">
+        
+        <div id="createItem">
+            <h1>@userName</h1>
+            <form name="id" method="post" asp-controller="ItemsList" asp-action="Create" asp-route-id="@list.Id">
+                <p>Adicionar item</p>
+                <input name="idList" type="hidden" value="@list.Id">
+                <button type="submit">
+                    <h1>+</h1>
+                </button>
+            </form>
+        </div>
+
+        <p>@list.Description</p>
+        
+        @foreach (Item item in @items)
+        {
+            <div id="item">
+                <img src="img/unnamed.png">
+                <div id="values">
+                    <div id="top">
+                        <form name="idItem" asp-controller="ItemsList" asp-action="Delete" method="get" asp-route-idItem="@item.Id">
+                            <h3>@item.Name</h3>
+                            <input name="idItem" type="hidden" value="@item.Id">
+                            <button type="submit">
+                                <h5>X</h5>
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <h5>@item.Description | <a href="@item.Link" target="_blank">@item.StoreName</a></h5>
+                    <div id="down">
+                        <form method="post" asp-controller="RegisterItemController" asp-action="Edit" asp-route-idItem="@item.Id">
+                            <p>R$ @item.Value</p>
+                            <input name="idItem" type="hidden" value="@item.Id">
+                            <button type="submit">
+                                <p>Edit</p>
+                                <img src="img/pencil.png">
+                            </button>
+                            <p>Comprado</p>
+                            @if (@item.State == State.Purchase)
+                            {
+                                <input type="checkbox">
+                            }
+                            else
+                            {
+                                <input type="checkbox" checked> 
+                            }
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
 </body>
-</html>

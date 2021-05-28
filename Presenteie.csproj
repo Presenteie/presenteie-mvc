@@ -37,7 +37,9 @@
     </ItemGroup>
 
     <ItemGroup>
+
       <_ContentIncludedByDefault Remove="Views\Password\Reset\index.cshtml" />
+
     </ItemGroup>
 
     <ItemGroup>

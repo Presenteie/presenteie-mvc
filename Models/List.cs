@@ -18,9 +18,13 @@ namespace Presenteie.Models
         // Id do usuário que criou essa lista
         [ForeignKey("User")]
         public long IdUser { get; set; }
+        
+        [Required]
+        public String Description { get; set; }
 
         // Tema da lista
         [Required] 
+        [Column(TypeName = "nvarchar(15)")]
         public Theme ThemeList { get; set; }
         
         [Required]
