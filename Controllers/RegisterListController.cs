@@ -26,7 +26,8 @@ namespace Presenteie.Controllers
         {
             var userId = long.Parse(User.Claims.FirstOrDefault(claim => claim.Type == ClaimTypes.NameIdentifier)?.Value);
             //_context.Lists.Add(list);
-            return View();
+            //return View();
+            return RedirectToAction("Index", "Home");   
         }
 
 

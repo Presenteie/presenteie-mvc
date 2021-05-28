@@ -37,7 +37,7 @@
     <form class="w-100" asp-action="Index" method="post" asp-controller="RegisterList">
         <div id="theme" >
             <p>Selecione a comemoração</p>
-        <select asp-for="ThemeList">
+        <select asp-for="ThemeList" required>
             <option value="0">Aniversário</option>
             <option value="1">Bodas</option>
         </select>
@@ -46,12 +46,12 @@
 
         <div id="date">
             <p>Data do evento</p>
-            <input type="date" asp-for="EventDate" />
+            <input type="date" asp-for="EventDate" required />
         </div>
 
         <div id="description">
             <p>Descrição do evento</p>
-            <textarea cols="60" rows="5" asp-for="Description"></textarea>
+            <textarea cols="60" rows="5" asp-for="Description" required></textarea>
         </div>
 
         <button type="submit">Cadastrar lista</button>
