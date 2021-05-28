@@ -9,7 +9,7 @@ using Presenteie;
 namespace Presenteie.Migrations
 {
     [DbContext(typeof(PresenteieContext))]
-    [Migration("20210525161056_Users")]
+    [Migration("20210528142445_Users")]
     partial class Users
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,8 +40,9 @@ namespace Presenteie.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("State")
-                        .HasColumnType("int");
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(15)");
 
                     b.Property<string>("StoreName")
                         .IsRequired()
@@ -64,14 +65,19 @@ namespace Presenteie.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<DateTime>("EventDate")
                         .HasColumnType("datetime(6)");
 
                     b.Property<long>("IdUser")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("ThemeList")
-                        .HasColumnType("int");
+                    b.Property<string>("ThemeList")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(15)");
 
                     b.HasKey("Id");
 

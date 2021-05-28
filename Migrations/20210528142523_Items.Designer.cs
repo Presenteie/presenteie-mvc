@@ -9,8 +9,8 @@ using Presenteie;
 namespace Presenteie.Migrations
 {
     [DbContext(typeof(PresenteieContext))]
-    [Migration("20210523180013_Lists")]
-    partial class Lists
+    [Migration("20210528142523_Items")]
+    partial class Items
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -40,11 +40,16 @@ namespace Presenteie.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<decimal>("Value")
-                        .HasColumnType("decimal(65,30)");
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(15)");
 
-                    b.Property<int>("state")
-                        .HasColumnType("int");
+                    b.Property<string>("StoreName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<decimal>("Value")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
@@ -60,14 +65,19 @@ namespace Presenteie.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<DateTime>("EventDate")
                         .HasColumnType("datetime(6)");
 
                     b.Property<long>("IdUser")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("ThemeList")
-                        .HasColumnType("int");
+                    b.Property<string>("ThemeList")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(15)");
 
                     b.HasKey("Id");
 
