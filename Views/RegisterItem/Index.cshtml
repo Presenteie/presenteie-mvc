@@ -1,6 +1,7 @@
 @model Presenteie.Models.Item
 @{
     ViewData["Title"] = "Cadastrar Itens";
+    var idList = ViewBag.IdList;
 }
 
 @section CSS
@@ -21,6 +22,7 @@
     
     <form class="w-100" asp-action="Index" method="post" asp-controller="RegisterItem">
         <div class="mb-3">
+        <input type="hidden" name="idList" value="@idList">
             <label>
                 Imagem
                 <input type="file"/>

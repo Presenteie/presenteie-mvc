@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,7 +32,7 @@ namespace Presenteie.Controllers
                 (list, item) => item
             ).ToList();
 
-            var UserId = long.Parse(User.Claims.FirstOrDefault(claim => claim.Type == "Id")?.Value);
+            var UserId = long.Parse(User.Claims.FirstOrDefault(claim => claim.Type == ClaimTypes.NameIdentifier)?.Value);
             var list = lists.Where(list1 => list1.Id == idList && list1.IdUser == UserId).FirstOrDefault();
 
             if (list != null)
@@ -74,7 +75,7 @@ namespace Presenteie.Controllers
             if (item != null)
             {
                 var list = lists.Where(list => list.Id == item.IdList).FirstOrDefault();
-                var UserId = long.Parse(User.Claims.FirstOrDefault(claim => claim.Type == "Id")?.Value);
+                var UserId = long.Parse(User.Claims.FirstOrDefault(claim => claim.Type == ClaimTypes.NameIdentifier)?.Value);
 
 
                 if (list.IdUser == UserId)

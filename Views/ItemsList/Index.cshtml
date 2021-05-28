@@ -69,7 +69,7 @@
                     
                     <h5>@item.Description | <a href="@item.Link" target="_blank">@item.StoreName</a></h5>
                     <div id="down">
-                        <form method="post" asp-controller="RegisterItemController" asp-action="Edit" asp-route-idItem="@item.Id">
+                        <form method="post" asp-controller="RegisterItem" asp-action="Edit" asp-route-idItem="@item.Id">
                             <p>R$ @item.Value</p>
                             <input name="idItem" type="hidden" value="@item.Id">
                             <button type="submit">
