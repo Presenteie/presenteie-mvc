@@ -23,7 +23,7 @@ namespace Presenteie.Migrations
                     Description = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Value = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    State = table.Column<int>(type: "int", nullable: false),
+                    State = table.Column<string>(type: "nvarchar(15)", nullable: false),
                     StoreName = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Link = table.Column<string>(type: "longtext", nullable: false)
@@ -42,7 +42,9 @@ namespace Presenteie.Migrations
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     IdUser = table.Column<long>(type: "bigint", nullable: false),
-                    ThemeList = table.Column<int>(type: "int", nullable: false),
+                    Description = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    ThemeList = table.Column<string>(type: "nvarchar(15)", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     EventDate = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
