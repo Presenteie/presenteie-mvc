@@ -1,0 +1,61 @@
+@model Presenteie.Models.List
+
+@{
+    ViewData["Title"] = "Criar lista";
+}
+
+@section CSS
+{
+    <link rel="stylesheet" href="~/css/registerlist.css"/>
+}
+
+<body>    
+
+        <div id= "LateralEsquerda">
+        <img id= "fotoperfil" src="img/4foto.png">
+
+        <nav id="menu">     
+          <h2><li>Informações</li></h2>
+            <hr id= "tracoDiferente">
+            <ul>
+            <a href="#">Minha Lista</a>
+            <hr>
+            <a href="#">Meus Presentes</a>
+            <hr>
+            <a href="#">Configurações</a>
+            <hr>
+            <a href="#">Sair</a>
+            <hr>
+            </ul>
+        </nav> 
+        </div>
+
+
+<div class="registerlist">
+
+    <hr>
+    <form class="w-100" asp-action="Index" method="post" asp-controller="RegisterList">
+        <div id="theme" >
+            <p>Selecione a comemoração</p>
+        <select asp-for="ThemeList">
+            <option value="0">Aniversário</option>
+            <option value="1">Bodas</option>
+        </select>
+
+        </div>
+
+        <div id="date">
+            <p>Data do evento</p>
+            <input type="date" asp-for="EventDate" />
+        </div>
+
+        <div id="description">
+            <p>Descrição do evento</p>
+            <textarea cols="60" rows="5"></textarea>
+        </div>
+
+        <button type="submit">Cadastrar lista</button>
+    </form>
+    
+</div>
+</body>
