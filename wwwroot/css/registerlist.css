@@ -8,6 +8,7 @@
 
 div#LateralEsquerda {
     width: 22%;
+    height: 109%;
     font-family: 'Roboto', sans-serif;
     background-color: #c4c4c48e;
     display: flex;

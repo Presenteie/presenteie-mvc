@@ -24,8 +24,7 @@ namespace Presenteie.Controllers
         [HttpPost]
         public IActionResult Index([FromForm] List list)
         {
-            var userId = User.Claims.FirstOrDefault(claim => claim.Type == ClaimTypes.NameIdentifier)?.Value ?? string.Empty;
-            list.IdUser = int.Parse(userId);
+            var userId = long.Parse(User.Claims.FirstOrDefault(claim => claim.Type == ClaimTypes.NameIdentifier)?.Value);
             //_context.Lists.Add(list);
             return View();
         }
