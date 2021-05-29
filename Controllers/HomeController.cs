@@ -22,7 +22,7 @@ namespace Presenteie.Controllers
         public IActionResult Index()
         {
             var userId = int.Parse(User.Claims.FirstOrDefault(claim => claim.Type == ClaimTypes.NameIdentifier)?.Value ?? string.Empty);
-            var lists = _context.Lists.Where(list => userId.Equals(userId));
+            var lists = _context.Lists.Where(list => list.IdUser.Equals(userId));
             
             ViewBag.lists = lists;
             return View();
