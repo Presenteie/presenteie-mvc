@@ -41,7 +41,7 @@
         
         <div id="createItem">
             <h1>@userName</h1>
-            <form name="id" method="post" asp-controller="ItemsList" asp-action="Create" asp-route-id="@list.Id">
+            <form method="get" asp-controller="RegisterItem" asp-action="Index" asp-route-idList="@list.Id">
                 <p>Adicionar item</p>
                 <input name="idList" type="hidden" value="@list.Id">
                 <button type="submit">
@@ -58,7 +58,7 @@
                 <img src="img/unnamed.png">
                 <div id="values">
                     <div id="top">
-                        <form name="idItem" asp-controller="ItemsList" asp-action="Delete" method="get" asp-route-idItem="@item.Id">
+                        <form asp-controller="RegisterItem" asp-action="Delete" method="get" asp-route-idItem="@item.Id">
                             <h3>@item.Name</h3>
                             <input name="idItem" type="hidden" value="@item.Id">
                             <button type="submit">
@@ -69,7 +69,7 @@
                     
                     <h5>@item.Description | <a href="@item.Link" target="_blank">@item.StoreName</a></h5>
                     <div id="down">
-                        <form method="post" asp-controller="RegisterItemController" asp-action="Edit" asp-route-idItem="@item.Id">
+                        <form method="get" asp-controller="RegisterItem" asp-action="Edit" asp-route-idItem="@item.Id">
                             <p>R$ @item.Value</p>
                             <input name="idItem" type="hidden" value="@item.Id">
                             <button type="submit">

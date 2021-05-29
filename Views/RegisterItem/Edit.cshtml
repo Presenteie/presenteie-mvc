@@ -1,7 +1,7 @@
 @model Presenteie.Models.Item
 @{
-    ViewData["Title"] = "Cadastrar Itens";
-    var idList = ViewBag.IdList;
+    ViewData["Title"] = "Editar item";
+    var item = ViewBag.Item;
 }
 
 @section CSS
@@ -20,12 +20,12 @@
         </ul>
     </div>
     
-    <form class="w-100" asp-action="Create" method="post" asp-controller="RegisterItem">
+    <form class="w-100" asp-action="SaveEdit" method="post" asp-controller="RegisterItem">
         <div class="mb-3">
         
-            <input type="hidden" asp-for="Id" value="@null">
-            <input type="hidden" asp-for="IdList" value="@idList">
-            <input type="hidden" asp-for="State" value="Purchase">
+            <input type="hidden" asp-for="Id" value="@item.Id">
+            <input type="hidden" asp-for="IdList" value="@item.IdList">
+            <input type="hidden" asp-for="State" value="@item.State">
             <label>
                 Imagem
                 <input type="file"/>
@@ -33,24 +33,24 @@
         
             <label>
                 Nome do Produto
-                <input type="text" asp-for="Name" placeholder="Cafeteira"/>
+                <input type="text" asp-for="Name" value="@item.Name"/>
                 
-                </label>
+            </label>
             <label>
                 Descrição
-                <input type="text" asp-for="Description" placeholder="Eletrodomestico | Americanas"/>
+                <input type="text" asp-for="Description" value="@item.Description"/>
                 
             </label>
             <label>
                 R$ Adicionar Preço
-                <input type="number" min="0" step="0.01" asp-for="Value" placeholder="0,00"/>
+                <input type="number" min="0" step="0.01" asp-for="Value" value="@item.Value"/>
                 
             </label>
             <label>Nome da loja</label>
-            <input type="text" asp-for="StoreName" placeholder="Pinguim">
+            <input type="text" asp-for="StoreName" value="@item.StoreName">
             <label>
                 + Adicionar Link
-                <input type="url" asp-for="Link" placeholder="www.Americanas.com"/>
+                <input type="url" asp-for="Link" value="@item.Link"/>
                             
             </label>
         </div>
