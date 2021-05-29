@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Presenteie.Models
 {
@@ -18,6 +19,10 @@ namespace Presenteie.Models
         
         [Required(ErrorMessage = "A senha é obrigatória")]
         public string Password { get; set; }
+        
+        [NotMapped]
+        [Compare("Password", ErrorMessage = "Confirmar senha não confere.")]
+        public string ConfirmPassword { get; set; }
     }
     
     public class UserCredentials

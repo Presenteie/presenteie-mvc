@@ -1,6 +1,7 @@
 @model Presenteie.Models.UserCredentials
 @{
     ViewData["Title"] = "Entrar";
+    Layout = "_NoAuthLayout";
 }
 
 @section CSS
@@ -42,5 +43,3 @@
 {
     @{ <partial name="_ValidationScriptsPartial" /> }
 }
-
-

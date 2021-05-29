@@ -1,5 +1,6 @@
 @using Presenteie.Models.Enum
 @{
+    Layout = "_Layout";
     ViewData["Title"] = "Itens";
     var items = ViewBag.Items;
     var userName = ViewBag.UserName;
@@ -13,29 +14,7 @@
 }
 
 <body>
-    <div id="lefttSide">
-        <img src="img/4foto.png">
-
-        <nav id="menu">     
-            <h2><li>Informações</li></h2>
-            <ul>
-                <hr>
-                <a href="#">Minhas Listas</a>
-                <hr>
-                <a href="#">Meus Presentes</a>
-                <hr>
-                <a href="#">Configurações</a>
-                <hr>
-                <a href="#">Sair</a>
-                <hr></ul>
-        </nav>
-    </div>
-
-    <div id="rightside">
-        <div id="MyList">
-            <hr>
-            <a href="#"> <strong>+ Criar Lista</strong> </a>
-        </div>
+<div id="rightside">
         
         <img src="https://via.placeholder.com/342x75">
         
