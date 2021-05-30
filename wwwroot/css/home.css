@@ -141,8 +141,7 @@ div#imagens div#box img {
     border-radius: 16%;
     border: 5px #FFFFFF solid;
     box-shadow: 1px 1px 1px 1px rgb(194, 190, 184);
-    position: relative;
-    
+    position: relative; 
 }
 
 div#imagnes div#box ,h4 {

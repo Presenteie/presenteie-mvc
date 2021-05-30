@@ -1,5 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home";
+
+    var lists = ViewBag.lists;
 }
 
 @section CSS
@@ -15,7 +17,7 @@
           <h2><li>Informações</li></h2>
             <hr id= "tracoDiferente">
             <ul>
-            <a href="https://localhost:5001">Minha Lista</a>
+            <a href="https://localhost:5001">Minhas Listas</a>
             <hr>
             <a href="https://localhost:5001/Settings">Configurações</a>
             <hr>
@@ -35,79 +37,16 @@
 
             <div id="localimagens">
                 <div id="imagens">
-                    <div id="box">
-                        <a href="#"> <img src="img/festa1.jpeg"> </a>
-                        <h4> Jonathas Silva </h4>
-                        <p>Casamento | 30/05/21</p>
-                    </div>
 
-                    <div id="box">
-                        <a href="#"> <img src="img/festa1.jpeg"> </a>
-                        <h4> Luciana</h4>
-                        <p>Velório | 30/05/21</p>
-                    </div>
-
-                    <div id="box">
-                        <a href="#"> <img src="img/festa1.jpeg"> </a>
-                        <h4> José Lucas </h4>
-                        <p>Casamento | 30/05/21</p>
-                    </div>
-
-                    <div id="box">
-                        <a href="#"> <img src="img/festa1.jpeg"> </a>
-                        <h4> Thais Tarora</h4>
-                        <p>Aniverário | 30/05/21</p>
-                    </div>
-
-                    <div id="box">
-                        <a href="#"> <img src="img/festa1.jpeg"> </a>
-                        <h4> Felipe Sampaio </h4>
-                        <p>Bodas | 30/05/21</p>
-                    </div>
-
-                    <div id="box">
-                        <a href="#"> <img src="img/festa1.jpeg"> </a>
-                        <h4> Pedro Henrique </h4>
-                        <p>Aniversário| 30/05/21</p>
-                    </div>
-
-                    <div id="box">
-                        <a href="#"> <img src="img/festa1.jpeg"> </a>
-                        <h4> João Francisco</h4>
-                        <p>Casamento | 30/05/21</p>
-                    </div>
-
-                    <div id="box">
-                        <a href="#"> <img src="img/festa1.jpeg"> </a>
-                        <h4> Aline Rosa</h4>
-                        <p>Bodas | 30/05/21</p>
-                    </div>
-
-                    <div id="box">
-                        <a href="#"> <img src="img/festa1.jpeg"> </a>
-                        <h4> Breno Luiz </h4>
-                        <p>Aniversário | 30/05/21</p>
-                    </div>
-
-                     <div id="box">
-                        <a href="#"> <img src="img/festa1.jpeg"> </a>
-                        <h4> Flávia Beatriz </h4>
-                        <p>Aniversário | 30/05/21</p>
-                    </div>
-
-                     <div id="box">
-                        <a href="#"> <img src="img/festa1.jpeg"> </a>
-                        <h4> Lucas Souza </h4>
-                        <p>Aniversário | 30/05/21</p>
-                    </div>
-
-                     <div id="box">
-                        <a href="#"> <img src="img/festa1.jpeg"> </a>
-                        <h4> Lucas Souza </h4>
-                        <p>Aniversário | 30/05/21</p>
-                    </div>
-
-                </div>  
+                    @foreach (var list in lists)
+                    {
+                        <div id="box">
+                            <a> <img src="img/festa1.jpeg"> </a>
+                            <h4> @User.Identity?.Name </h4>
+                            <p>@list.ThemeList | @list.EventDate.ToString("dd/MM/yyyy - hh:mm")</p>
+                        </div>
+                    }
+                </div>
             </div>
         </div>
 </body>

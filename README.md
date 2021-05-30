@@ -17,6 +17,13 @@ Or set up an instance yourself. Default settings:
 * User: `user`
 * Password: `password`
 
+```sql
+CREATE DATABASE presenteie;
+CREATE USER 'user'@'%' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON presenteie.* to 'user'@'%';
+FLUSH PRIVILEGES;
+```
+
 You can also change it by editing **appsettings.json**
 
 ## Migrations

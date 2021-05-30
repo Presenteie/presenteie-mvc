@@ -1,0 +1,103 @@
+.registeritem {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.superior {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    margin-left: -100px;
+}
+
+.superior ul {
+    background: #C6AD89;
+    border-radius: 12px;
+    padding: 15px;
+    height: 8px;
+    width: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 2rem 1rem 6rem;
+}
+
+.superior-empty {
+    background: #C6AD89;
+    border-radius: 12px;
+    padding: 15px;
+    width: 550px;
+    height: 8px;
+    display: flex;
+    margin: 1rem 2rem 1rem 6rem;
+}
+
+.superior ul li {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bolder;
+    list-style-type: none;
+    margin-left: 23px;
+    margin-top: -13px;
+}
+
+.superior-registeritem {
+    background: #C6AD89;
+    border-radius: 8px;
+    padding: 15px;
+    height: 14px;
+    width: 200px;
+    margin: 1rem 1rem 1rem 1rem;
+}
+
+.registeritem form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.registeritem form label {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+    color: #C6AD89;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.registeritem form label input {
+    color: #767676;
+    font-size: 18px;
+    padding: 10px 15px;
+    border: none;
+    box-shadow: 0 0 2px 0 #767676;
+    border-radius: 5px;
+}
+
+::placeholder {
+    color: lightgray;
+}
+
+.registeritem form label span {
+    text-align: center;
+    color: darkred;
+    font-size: 15px;
+    height: 18px;
+}
+
+.registeritem form button {
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;
+    background: #C6AD89;
+    border: none;
+    padding: 10px;
+    margin: 1px 0;
+    border-radius: 16px;
+}
+
+.auth span {
+    margin-bottom: 5px !important;
+}
