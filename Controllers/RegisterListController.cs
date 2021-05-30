@@ -1,12 +1,14 @@
 using System;
 using System.Linq;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Presenteie.Models;
 
 namespace Presenteie.Controllers
 {
+    [Authorize]
     public class RegisterListController : Controller
     {
 
