@@ -57,12 +57,9 @@ namespace Presenteie.Controllers
             var userId = long.Parse(User.Claims.FirstOrDefault(claim => claim.Type == ClaimTypes.NameIdentifier)?.Value);
             list = lists.Where(list => list.Id == idList && list.IdUser == userId).FirstOrDefault();
             if (list != null) {
-                
-                Console.WriteLine(list.Description);
                 ViewBag.List = list;
                 return View("Edit");
             }
-
             
             return RedirectToRoute(new {
 
