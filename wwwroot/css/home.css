@@ -22,8 +22,8 @@ div#LateralEsquerda {
 }
 
 #fotoperfil {
-    width: 180px;
-    height: 180px;
+    width: 52%;
+    height: 27%;
     border-radius: 50%;
     top: 50%;
     left: 50%;
@@ -33,7 +33,7 @@ div#LateralEsquerda {
 
 div#LateralEsquerda nav#menu h2 {
     margin-top: 40%;
-    font-size: 13pt;
+    font-size: 100%;
     color: #C6AD89;
     list-style: none;
     line-height: 30%;
@@ -89,7 +89,7 @@ div#LateralDireita div#localimagens {
     position: relative;
     width: 93%;
     top: 85px;
-    left: -12px;
+    left: -2%;
     height: 80%;
     overflow-y: auto;
 }
@@ -99,17 +99,17 @@ div#LateralDireita div#localimagens {
     border-radius: 1%;
 }
 ::-webkit-scrollbar-track {
-    background-color: #7272721c;
+    background-color: #c6aa893d;
 }
 ::-webkit-scrollbar-button {
-    background-color: #72727221;
+    background-color: #c6ac89c0;
     border-radius: 2%;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: #72727221;
+    background-color: #c6ab8986;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #72727256;
+    background-color: #c6ac89c0;
 }
 
 div#imagens {
@@ -117,20 +117,22 @@ div#imagens {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    /* position: relative; */
-    /* left: 39px; */
-    margin-left: 22px;
+    margin-left: 2%;
 }
 
 div#imagens div#box {
-    margin: 22px;
-    margin-top: 20px;
+    margin: 2.5%;
+    margin-top: 2%;
     text-align: center;
     display: inline-block;
+    transition: 0.4s;
+
 }
 
 div#imagens div#box:hover {
-    width: 124px;
+    cursor: pointer;
+    transform: translateY(-4%);
+    background: rgba (102, 175, 102, 0.637);
 }
 
 div#imagens div#box img {
@@ -139,35 +141,35 @@ div#imagens div#box img {
     border-radius: 16%;
     border: 5px #FFFFFF solid;
     box-shadow: 1px 1px 1px 1px rgb(194, 190, 184);
+    position: relative;
     
 }
 
 div#imagnes div#box ,h4 {
     color: #C6AD89;
-    font-size: 17px;
+    font-size: 100%;
 }
 
 div#imagnes div#box ,p {
     color: #727272;
-    font-size: 13px;
+    font-size: 80%;
 }
 
     
 div#retangulo {
-    width: 750px;
-    height: 16px;
+    width: 82%;
+    height: 4.5%;
     background-color: #C6AD89;
     display: flex;
     position: relative;
     left: 4%;
     border-radius: 7px;
-    padding: 13px;
     margin: 3rem -23rem 2rem 0rem;
 }
 
 div#MyList {
-    width: 216px;
-    height: 26px;
+    width: 15%;
+    height: 4.8%;
     background-color: #c6ad89;
     display: flex;
     position: relative;
@@ -179,11 +181,12 @@ div#MyList {
 div#MyList a {
     display: flex;
     padding: 0px 0px 0px 10px;
-    font-size: 15pt;
+    font-size: 100%;
     color: #FFFFFF;
     text-decoration: none;
     position: relative;
-    left: 46px;
+    margin-left: 16%;
+    margin-top: 3%;
     font-style: unset;
     text-decoration: none;
 }
