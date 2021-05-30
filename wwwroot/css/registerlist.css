@@ -1,0 +1,130 @@
+* {
+    --color-h1: #C6AD89;
+    --color-text:  #B6B6B6;
+    --color-button: #767676;
+    --color-button-hover: #a58b68;
+}
+
+
+div#LateralEsquerda {
+    width: 22%;
+    height: 109%;
+    font-family: 'Roboto', sans-serif;
+    background-color: #c4c4c48e;
+    display: flex;
+    place-items: center;
+    flex-direction: column;
+    box-shadow: 4px 5px 13px #8c8e93;
+    text-align: center;
+}
+
+#fotoperfil {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    border: 6px #C6AD89 solid;
+    margin-top: 15%;
+}
+
+div#LateralEsquerda nav#menu h2 {
+    margin-top: 40%;
+    font-size: 13pt;
+    color: #C6AD89;
+    list-style: none;
+    line-height: 30%;
+}
+
+div#LateralEsquerda nav#menu ul a {
+    text-decoration: none;  
+    font-size: 80%;
+    color: #8C8E93;
+    text-transform: uppercase;
+}
+
+
+div#LateralEsquerda nav#menu ul a:hover {
+    color:#66686b;
+}
+
+
+
+#tracoDiferente {
+    margin-top: 14%;
+    border-top: 1px solid #C6AD89;
+    margin-bottom: 14%;
+}
+
+hr {
+    margin-top: 14%;
+    border-top: 1px solid #999999;
+    margin-bottom: 14%;
+}
+
+.registerlist {
+    margin-left: 15%;
+    display: flex;
+    flex-direction: column;
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+.registerlist form {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.registerlist hr {
+    background: var(--color-h1);
+    height: 30px;
+    width: 100%;
+    border-radius: 10px;
+    border: 0px; 
+}
+
+.registerlist form div, button {
+    margin: 15px 0px;
+}
+
+.registerlist form input, select {
+    width: 100%;
+    box-shadow: 0 0 2px 0 var(--color-button);
+    font-size: 18px;
+}
+
+.registerlist form input {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    color: var(--color-h1);
+}
+
+.registerlist form select {
+    height: 80%;
+}
+
+.registerlist form textarea {
+
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    color: var(--color-h1);
+    box-shadow: 0 0 2px 0 var(--color-button);
+
+}
+
+.registerlist form button {
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    background: var(--color-h1);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.registerlist form button:hover {
+    background: var(--color-button-hover);
+}

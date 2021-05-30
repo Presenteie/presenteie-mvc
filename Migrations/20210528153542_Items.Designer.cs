@@ -9,8 +9,8 @@ using Presenteie;
 namespace Presenteie.Migrations
 {
     [DbContext(typeof(PresenteieContext))]
-    [Migration("20210528142531_Lists")]
-    partial class Lists
+    [Migration("20210528153542_Items")]
+    partial class Items
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
