@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
@@ -16,7 +15,11 @@ namespace Presenteie.Controllers
             _context = presenteieContext;
         }
 
-        [HttpGet("ItemsList/{idList}")]
+        
+        /*
+         * Receive the list id and return the view with the list items
+         */
+        [HttpGet("List/{idList}/Items/")]
         public IActionResult Index(long idList)
         {
             var lists = _context.Users.Join(
@@ -25,6 +28,7 @@ namespace Presenteie.Controllers
                 list => list.IdUser,
                 (user, list) => list
             ).ToList();
+
             
             var items = _context.Lists.Join(
                 _context.Items,
@@ -34,6 +38,7 @@ namespace Presenteie.Controllers
             ).ToList();
 
             var UserId = long.Parse(User.Claims.FirstOrDefault(claim => claim.Type == ClaimTypes.NameIdentifier)?.Value);
+
             var list = lists.Where(list1 => list1.Id == idList && list1.IdUser == UserId).FirstOrDefault();
 
             if (list != null)
@@ -42,6 +47,7 @@ namespace Presenteie.Controllers
                 if (list.IdUser == UserId)
                 {
                     ViewBag.UserName = User.Identity.Name;
+
                     ViewBag.Items = items;
                     ViewBag.List = list;
                     return View();

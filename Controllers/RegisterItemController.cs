@@ -1,12 +1,14 @@
 using System;
 using System.Linq;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Presenteie.Models;
 
 namespace Presenteie.Controllers
 {
+    [Authorize]
     public class RegisterItemController : Controller
     {
         private readonly PresenteieContext _context;
@@ -16,7 +18,7 @@ namespace Presenteie.Controllers
             _context = presenteieContext;
         }
 
-        [HttpGet("Item/Create/{idList}")]
+        [HttpGet("Item/{idList}/Create")]
         public IActionResult Index([FromRoute] long idList)
         {
             Console.WriteLine(idList);
@@ -72,7 +74,7 @@ namespace Presenteie.Controllers
             });
         } 
         
-        [HttpGet("Item/Edit/{idItem}")]
+        [HttpGet("Item/{idItem}/Edit")]
         public IActionResult Edit([FromRoute] long idItem)
         {
             var lists = _context.Users.Join(
@@ -107,7 +109,7 @@ namespace Presenteie.Controllers
             });
         }
         
-        [HttpGet("Item/Delete/{idItem}")]
+        [HttpGet("Item/{idItem}/Delete")]
         public IActionResult Delete([FromRoute] long idItem)
         {
             var lists = _context.Users.Join(

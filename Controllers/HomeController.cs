@@ -21,9 +21,15 @@ namespace Presenteie.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var userId = int.Parse(User.Claims.FirstOrDefault(claim => claim.Type == ClaimTypes.NameIdentifier)?.Value ?? string.Empty);
-            var lists = _context.Lists.Where(list => userId.Equals(userId));
+            var userId = long.Parse(User.Claims.FirstOrDefault(claim => claim.Type == ClaimTypes.NameIdentifier)?.Value);
             
+            var lists = _context.Lists.Where(list => list.IdUser == userId).Join(
+                _context.Users,
+                list => list.IdUser,
+                user => user.Id,
+                (list, user) => list
+            ).ToList();
+
             ViewBag.lists = lists;
             return View();
         }

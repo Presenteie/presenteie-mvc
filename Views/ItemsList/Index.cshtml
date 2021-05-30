@@ -5,8 +5,8 @@
     var items = ViewBag.Items;
     var userName = ViewBag.UserName;
     var list = ViewBag.List;
-    
 }
+
 
 @section CSS
 {
@@ -15,60 +15,66 @@
 
 <body>
 <div id="rightside">
+    <div id="MyList">
+            <hr>
+            <a asp-controller="RegisterList" asp-action="Index" asp-route-idList="@list.Id"><strong>Editar Lista</strong></a>
+            <a asp-controller="RegisterList" asp-action="Delete" asp-route-idList="@list.Id" onclick="javascript: return confirm('Deseja mesmo excluir?')"><strong>Excluir Lista</strong></a>
+        </div>
         
         <img src="https://via.placeholder.com/342x75">
         
-        <div id="createItem">
-            <h1>@userName</h1>
-            <form method="get" asp-controller="RegisterItem" asp-action="Index" asp-route-idList="@list.Id">
-                <p>Adicionar item</p>
-                <input name="idList" type="hidden" value="@list.Id">
-                <button type="submit">
-                    <h1>+</h1>
-                </button>
-            </form>
-        </div>
+            <div id="createItem">
+                <h1>@userName</h1>
+                <form method="get" asp-controller="RegisterItem" asp-action="Index" asp-route-idList="@list.Id">
+                    <p>Adicionar item</p>
+                    <input name="idList" type="hidden" value="@list.Id">
+                    <button type="submit">
+                        <h1>+</h1>
+                    </button>
+                </form>
+            </div>
 
-        <p>@list.Description</p>
+            <p>@list.Description</p>
         
+        <div class="Items">
         @foreach (Item item in @items)
-        {
-            <div id="item">
-                <img src="img/unnamed.png">
-                <div id="values">
-                    <div id="top">
-                        <form asp-controller="RegisterItem" asp-action="Delete" method="get" asp-route-idItem="@item.Id">
-                            <h3>@item.Name</h3>
-                            <input name="idItem" type="hidden" value="@item.Id">
-                            <button type="submit">
-                                <h5>X</h5>
-                            </button>
-                        </form>
-                    </div>
+            {
+                <div id="item">
+                    <img src="img/unnamed.png">
+                    <div id="values">
+                        <div id="top">
+                            <form asp-controller="RegisterItem" asp-action="Delete" method="get" asp-route-idItem="@item.Id">
+                                <h3>@item.Name</h3>
+                                <input name="idItem" type="hidden" value="@item.Id">
+                                <a asp-controller="RegisterItem" id="Delete" asp-action="Delete" asp-route-idItem="@item.Id" onclick="javascript: return confirm('Deseja mesmo excluir?')"><h5>X</h5></a>
+                            </form>
+                        </div>
                     
-                    <h5>@item.Description | <a href="@item.Link" target="_blank">@item.StoreName</a></h5>
-                    <div id="down">
-                        <form method="get" asp-controller="RegisterItem" asp-action="Edit" asp-route-idItem="@item.Id">
-                            <p>R$ @item.Value</p>
-                            <input name="idItem" type="hidden" value="@item.Id">
-                            <button type="submit">
-                                <p>Edit</p>
-                                <img src="img/pencil.png">
-                            </button>
-                            <p>Comprado</p>
-                            @if (@item.State == State.Purchase)
-                            {
-                                <input type="checkbox">
-                            }
-                            else
-                            {
-                                <input type="checkbox" checked> 
-                            }
-                        </form>
+                        <h5>@item.Description | <a href="@item.Link" target="_blank">@item.StoreName</a></h5>
+                        <div id="down">
+                            <form method="get" asp-controller="RegisterItem" asp-action="Edit" asp-route-idItem="@item.Id">
+                                <p>R$ @item.Value</p>
+                                <input name="idItem" type="hidden" value="@item.Id">
+                                <button type="submit">
+                                    <p>Edit</p>
+                                    <img src="~/img/pencil.png">
+                                </button>
+                                <p>Comprado</p>
+                                @if (@item.State == State.Purchase)
+                                {
+                                    <input type="checkbox">
+                                }
+                                else
+                                {
+                                    <input type="checkbox" checked> 
+                                }
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-        }
+            }
+        </div>
     </div>
 
 </body>
+

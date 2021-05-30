@@ -1,11 +1,13 @@
 using System;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using BC = BCrypt.Net.BCrypt;
 using Presenteie.Models;
 
 namespace Presenteie.Controllers
 {
+    [Authorize]
     public class SettingsController : Controller
     {
         private readonly PresenteieContext _context;

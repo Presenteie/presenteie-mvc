@@ -1,12 +1,14 @@
 using System;
 using System.Linq;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Presenteie.Models;
 
 namespace Presenteie.Controllers
 {
+    [Authorize]
     public class RegisterListController : Controller
     {
 
@@ -43,7 +45,7 @@ namespace Presenteie.Controllers
         }
 
         //The information subsequently inserted in a list is returned and shown to the user. 
-        [HttpGet("List/Edit/{idList}")]
+        [HttpGet("List/{idList}/Edit")]
         public IActionResult Index([FromRoute] long idList)
         {
             var lists = _context.Users.Join(
@@ -71,9 +73,7 @@ namespace Presenteie.Controllers
         //After inserting all the information in the list, the user has the possibility to edit them, thus updating all the data in the database. 
         [HttpPost("List/Edit")]
         public IActionResult Edit([FromForm] List list)
-    
         {
-
             _context.Entry(list).State = EntityState.Modified;
             _context.SaveChanges();
             return RedirectToRoute(new {
@@ -85,7 +85,7 @@ namespace Presenteie.Controllers
         
         
         //The user can delete list and all information contained in a list.
-        [HttpGet("List/Delete/{idList}")]
+        [HttpGet("List/{idList}/Delete")]
         public IActionResult Delete([FromRoute] long idList)
         {
             var lists = _context.Users.Join(

@@ -20,8 +20,11 @@ div#home-container div#gallery {
     background-color: #72727209;
     border-radius: 1%;
     position: absolute;
-    margin-top: 93px;
+    margin-top: 100px;
     width: 100%;
+    overflow: auto;
+    overflow-y: scroll;
+    height: 700px;
 }
 
 div#imagens {
@@ -29,7 +32,7 @@ div#imagens {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    margin-left: 20px;
+    margin: 30px 20px;
 }
 
 div#imagens div#box {
@@ -38,7 +41,6 @@ div#imagens div#box {
     text-align: center;
     display: inline-block;
     transition: 0.4s;
-
 }
 
 div#imagens div#box:hover {
