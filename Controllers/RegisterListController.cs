@@ -9,6 +9,8 @@ namespace Presenteie.Controllers
 {
     public class RegisterListController : Controller
     {
+
+        
         private readonly PresenteieContext _context;
         [BindProperty]
         public List list {get; set;}
@@ -17,6 +19,7 @@ namespace Presenteie.Controllers
             _context = presenteieContext;
         }
 
+        //The database returns the event ID to identify each list created.
         [HttpGet ("List/Create")]
         public IActionResult Index()
         {
@@ -25,6 +28,7 @@ namespace Presenteie.Controllers
             return View();
         }
 
+        //The database returns the date of the event previously entered by the user.
         [HttpPost]
         public IActionResult Create([FromForm] List list)
         {
@@ -38,6 +42,7 @@ namespace Presenteie.Controllers
             });   
         }
 
+        //The information subsequently inserted in a list is returned and shown to the user. 
         [HttpGet("List/Edit/{idList}")]
         public IActionResult Index([FromRoute] long idList)
         {
@@ -63,7 +68,7 @@ namespace Presenteie.Controllers
                 action = "Index"
             });
         }
-
+        //After inserting all the information in the list, the user has the possibility to edit them, thus updating all the data in the database. 
         [HttpPost("List/Edit")]
         public IActionResult Edit([FromForm] List list)
     
