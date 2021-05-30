@@ -39,26 +39,8 @@
             </ul>
         </nav>
     </header>
-
-    <div class="menu-left">
-        <img id="fotoperfil" src="~/img/4foto.png" alt=""/>
-        <nav id="menu">
-            <h2><li>Informações</li></h2>
-            <hr id="tracoDiferente">
-            <ul>
-                <a asp-controller="Home" asp-action="Index">Minha Lista</a>
-                <hr>
-                <a href="#">Meus Presentes</a>
-                <hr>
-                <a asp-controller="Settings" asp-action="Index">Configurações</a>
-                <hr>
-                <a asp-controller="Login" asp-action="Logout">Sair</a>
-                <hr>
-            </ul>
-        </nav>
-    </div>
-
-    <div class="main-container">
+    
+    <div class="noauth-container">
         @RenderBody()
     </div>
 </main>

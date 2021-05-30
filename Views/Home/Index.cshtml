@@ -1,6 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home";
-
+    Layout = "_Layout";
     var lists = ViewBag.lists;
 }
 
@@ -9,46 +9,23 @@
     <link rel="stylesheet" href="~/css/home.css">
 }
 
-<body>     
-        <div id= "LateralEsquerda">
-        <img id= "fotoperfil" src="img/4foto.png">
-
-        <nav id="menu">     
-          <h2><li>Informações</li></h2>
-            <hr id= "tracoDiferente">
-            <ul>
-            <a href="https://localhost:5001">Minhas Listas</a>
-            <hr>
-            <a href="https://localhost:5001/Settings">Configurações</a>
-            <hr>
-            <a asp-controller="Login" asp-action="Logout">Sair</a>
-            <hr>
-            </ul>
-        </nav> 
-        </div>
-
-        <div id= "LateralDireita"> 
-            <div id= "retangulo">
-            </div>
-
-            <div id="MyList">
-            <a href="https://localhost:5001/List/Create"> <strong>+ Criar Lista</strong> </a>
-            </div>
-
-            <div id="localimagens">
-                <div id="imagens">
-
-                    @foreach (var list in lists)
-                    {
-                        <div id="box">
-                            <a> <img src="img/festa1.jpeg"> </a>
-                            <h4> @User.Identity?.Name </h4>
-                            <p>@list.ThemeList | @list.EventDate.ToString("dd/MM/yyyy - hh:mm")</p>
-                        </div>
-                    }
+<div id= "home-container"> 
+    <div id= "retangulo"></div>
+    <div id="MyList">
+        <a  asp-ne href="/List/Create"> <strong>+ Criar Lista</strong> </a>
+    </div>
+    
+    <div id="gallery">
+        <div id="imagens">
+            @foreach (var list in lists)
+            {
+                <div id="box">
+                    <a> <img src="~/img/festa1.jpeg"> </a>
+                    <h4> @User.Identity?.Name </h4>
+                    <p>@list.ThemeList | @list.EventDate.ToString("dd/MM/yyyy - hh:mm")</p>
                 </div>
-            </div>
+            }
         </div>
-</body>
-
+    </div>
+</div>
       

@@ -4,6 +4,7 @@
 @{
     ViewData["Title"] = "Criar lista";
     var userId = ViewBag.UserId;
+    Layout = "_Layout";
 
 }
 
@@ -12,30 +13,7 @@
     <link rel="stylesheet" href="~/css/registerlist.css"/>
 }
 
-<body>    
-
-<div id= "LateralEsquerda">
-    <img id= "fotoperfil" src="img/4foto.png">
-
-    <nav id="menu">     
-        <h2><li>Informações</li></h2>
-        <hr id= "tracoDiferente">
-        <ul>
-            <a href="#">Minha Lista</a>
-            <hr>
-            <a href="#">Meus Presentes</a>
-            <hr>
-            <a href="#">Configurações</a>
-            <hr>
-            <a href="#">Sair</a>
-            <hr>
-        </ul>
-    </nav> 
-</div>
-
-
 <div class="registerlist">
-
     <hr>
     <form class="w-100" asp-action="Create" method="post" asp-controller="RegisterList">
         <input type="hidden" asp-for="CreatedDate" value="@DateTime.Now" />
@@ -59,10 +37,6 @@
             <p>Descrição do evento</p>
             <textarea style="resize: none" cols="60" rows="5" asp-for="Description" required></textarea>
         </div>
-
         <button type="submit">Cadastrar lista</button>
-
     </form>
-    
 </div>
-</body>
