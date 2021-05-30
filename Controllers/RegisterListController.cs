@@ -77,6 +77,54 @@ namespace Presenteie.Controllers
                 action = "Index"
             });
         }
+        
+        
+        //The user can delete list and all information contained in a list.
+        [HttpGet("List/Delete/{idList}")]
+        public IActionResult Delete([FromRoute] long idList)
+        {
+            var lists = _context.Users.Join(
+                _context.Lists,
+                user => user.Id,
+                list => list.IdUser,
+                (user, list) => list
+            ).ToList();
+           
+            var items = _context.Lists.Join(
+                _context.Items,
+                list => list.Id,
+                item => item.IdList,
+                (list, item) => item
+            ).ToList();
 
+            var UserId = long.Parse(User.Claims.FirstOrDefault(claim => claim.Type == ClaimTypes.NameIdentifier)?.Value);
+
+            var list = lists.Where(list1 => list1.Id == idList && list1.IdUser == UserId).FirstOrDefault();
+
+            var itemsVerify = items.Where(item => item.IdList == idList).ToList();
+
+            if (list != null)
+            {
+                foreach(var item in itemsVerify) {
+                    _context.Remove(item);
+                }
+
+                _context.Remove(list);
+                _context.SaveChanges();
+                
+
+                return RedirectToRoute(new
+                {
+                    controller = "Home",
+                    action = "Index"
+                });
+            }
+
+            return RedirectToRoute(new
+            {
+                controller = "Home",
+                action = "index"
+            });
+        }
     }
 }
