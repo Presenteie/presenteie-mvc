@@ -16,7 +16,13 @@ namespace Presenteie.Controllers
         {
             _context = presenteieContext;
         }
-
+        
+        /// <summary>
+        /// Method to get the logged user data.
+        /// </summary>
+        /// <returns>
+        /// Returns IActionResult.
+        /// </returns>
         [HttpGet]
         public IActionResult Index()
         {
@@ -33,13 +39,25 @@ namespace Presenteie.Controllers
             return View(user);
         }
 
+        /// <summary>
+        /// Method that loads the ChangePassword page.
+        /// </summary>
+        /// <returns>
+        /// Returns IActionResult.
+        /// </returns>
         [HttpGet]
         public IActionResult ChangePassword()
         {
             return View("ChangePassword");
         }
 
-        
+        /// <summary>
+        /// Method that changes and saves the logged user data.
+        /// </summary>
+        /// <param name="form"></param>
+        /// <returns>
+        /// Returns IActionResult.
+        /// </returns>
         [HttpPost, ActionName("Edit")]
         public IActionResult Edit(User form)
         {
@@ -58,6 +76,13 @@ namespace Presenteie.Controllers
             return RedirectToAction("Index");
         }
 
+        /// <summary>
+        /// Method that changes and saves the logged user password.
+        /// </summary>
+        /// <param name="form"></param>
+        /// <returns>
+        /// Returns IActionResult.
+        /// </returns>
         [HttpPost, ActionName("UpdatePassword")]
         public IActionResult UpdatePassword(User form)
         {
@@ -82,6 +107,13 @@ namespace Presenteie.Controllers
             return RedirectToAction("Index");
         }
 
+        /// <summary>
+        /// Method that delete the user account. Must be implemented in the next sprint.
+        /// </summary>
+        /// <param name="form"></param>
+        /// <returns>
+        /// Returns IActionResult.
+        /// </returns>
         [HttpDelete]
         public IActionResult Delete(User form)
         {
