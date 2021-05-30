@@ -1,6 +1,7 @@
 @model Presenteie.Models.UserCredentials
 @{
     ViewData["Title"] = "Entrar";
+    Layout = "_NoAuthLayout";
 }
 
 @section CSS
@@ -29,7 +30,7 @@
             Mantenha-me conectado
             <input asp-for="RememberMe"/>
         </label>
-        <button type="submit">entrar</button>
+        <button type="submit">Entrar</button>
     </form>
     <div class="w-100 d-flex align-items-center flex-column mt-2">
         <a class="nav-link" asp-controller="Security" asp-action="Index">Esqueci minha senha</a>
@@ -42,5 +43,3 @@
 {
     @{ <partial name="_ValidationScriptsPartial" /> }
 }
-
-

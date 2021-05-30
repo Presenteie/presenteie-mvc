@@ -1,0 +1,71 @@
+* {
+    --color-h1: #C6AD89;
+    --color-text:  #B6B6B6;
+    --color-button: #767676;
+    --color-button-hover: #a58b68;
+}
+
+.list-container {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+.list-container form {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.list-container hr {
+    background: var(--color-h1);
+    height: 30px;
+    width: 100%;
+    border-radius: 10px;
+    border: 0px;
+}
+
+.list-container form div, button {
+    margin: 15px 0px;
+}
+
+.list-container form input, select {
+    width: 100%;
+    box-shadow: 0 0 2px 0 var(--color-button);
+    font-size: 18px;
+}
+
+.list-container form input {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    color: var(--color-h1);
+}
+
+.list-container form select {
+    height: 80%;
+}
+
+.list-container form textarea {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    color: var(--color-h1);
+    box-shadow: 0 0 2px 0 var(--color-button);
+}
+
+.list-container form button {
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    background: var(--color-h1);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.list-container form button:hover {
+    background: var(--color-button-hover);
+}

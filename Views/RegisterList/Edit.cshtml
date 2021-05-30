@@ -1,0 +1,38 @@
+@model Presenteie.Models.List
+@using Presenteie.Models.Enum
+
+@{
+    ViewData["Title"] = "Criar lista";
+    var list = ViewBag.List;
+    Layout = "_Layout";
+
+}
+
+@section CSS
+{
+    <link rel="stylesheet" href="~/css/registerlist.css"/>
+}
+<div class="list-container">
+    <hr>
+    <form class="w-100" asp-action="Edit" method="post" asp-controller="RegisterList">
+        <div id="theme" > 
+            <p>Selecione a comemoração</p>
+            <select asp-for="ThemeList" asp-items="Html.GetEnumSelectList<Theme>()" required>
+               @list.ThemeList
+            </select>
+
+        </div>
+
+        <div id="date">
+            <p>Data do evento</p>
+            <input asp-format="{0:dd/MM/yyyy}" asp-for="EventDate" required />
+        </div>
+
+        <div id="description">
+            <p>Descrição do evento</p>
+            <input asp-for="Description" required value="@list.Description"/>
+        </div>
+
+        <button type="submit">Atualizar lista</button>
+    </form>
+</div>

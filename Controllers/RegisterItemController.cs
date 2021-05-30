@@ -9,7 +9,6 @@ using Presenteie.Models;
 namespace Presenteie.Controllers
 {
     [Authorize]
-
     public class RegisterItemController : Controller
     {
         private readonly PresenteieContext _context;
@@ -18,8 +17,10 @@ namespace Presenteie.Controllers
         {
             _context = presenteieContext;
         }
+
         //After entering the item information, the user creates an item within the list.
-        [HttpGet("Item/Create/{idList}")]
+
+        [HttpGet("Item/{idList}/Create")]
         public IActionResult Index([FromRoute] long idList)
         {
             Console.WriteLine(idList);
@@ -75,7 +76,9 @@ namespace Presenteie.Controllers
             });
         } 
         //Receive the item id, get item of database and send to view.
-        [HttpGet("Item/Edit/{idItem}")]
+
+        
+        [HttpGet("Item/{idItem}/Edit")]
         public IActionResult Edit([FromRoute] long idItem)
         {
             var lists = _context.Users.Join(
@@ -109,8 +112,10 @@ namespace Presenteie.Controllers
                 idList = item.IdList
             });
         }
+
         //The user can delete the item stored in the list
-        [HttpGet("Item/Delete/{idItem}")]
+        
+        [HttpGet("Item/{idItem}/Delete")]
         public IActionResult Delete([FromRoute] long idItem)
         {
             var lists = _context.Users.Join(

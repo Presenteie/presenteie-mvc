@@ -1,0 +1,13 @@
+{
+  "ConnectionStrings": {
+    "PresenteieContext": "server=localhost;user=user;password=password;database=presenteie"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "AllowedHosts": "*"
+}

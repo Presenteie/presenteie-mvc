@@ -15,35 +15,64 @@ body {
   background-image: url("/img/background.jpg");
   background-size: cover;
   height: 100vh;
+  width:100%;
 }
+
+body main {
+  display: flex;
+  height: calc(100vh - 60px);
+  background-color: #c4c4c433;
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+  border-radius: 1%;
+}
+::-webkit-scrollbar-track {
+  background-color: #7272721c;
+}
+::-webkit-scrollbar-button {
+  background-color: #72727221;
+  border-radius: 2%;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #72727221;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #72727256;
+}
+
 
 /* Header styles
 -------------------------------------------------- */
-
-body header {
+.header {
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 5px 10px;
   background: #C6AD89;
   height: 60px;
+  position: absolute;
+  width: 100%;
 }
 
-body header a img {
+.header a img {
   height: 40px;
 }
 
-body header nav ul {
+.header nav ul {
   list-style: none;
   display: flex;
   margin: 0;
 }
 
-body header nav ul li {
+.header nav ul li {
   margin: 5px;
+  height: 80px;
 }
 
-body header nav ul li a {
+.header nav ul li a {
   padding: 10px;
   text-decoration: none;
   color: white;
@@ -51,23 +80,116 @@ body header nav ul li a {
   font-weight: 500;
 }
 
-body header nav ul li a:hover {
+.header nav ul li a:hover {
   background: #bba27f;
   color: #FFFFFF;
   text-decoration: none;
 }
 
-body header nav ul .name{
- color: #FFFFFF;
- font-family: 'Roboto', sans-serif;
- font-size: 20px;
+.header nav ul .name{
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  margin-top: 6px;
 }
+
+.top-navbar {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+}
+
+/* Menu */
+.menu-left {
+  width: 240px;
+  height: 100%;
+  padding-top: 60px;
+  position: absolute;
+  font-family: 'Roboto', sans-serif;
+  background-color: #c4c4c48e;
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+  box-shadow: 4px 5px 13px #8c8e93;
+  text-align: center;
+  overflow: auto;
+  min-height: 100vh;
+}
+
+.menu-left nav#menu h2 {
+  margin-top: 40%;
+  font-size: 13pt;
+  color: #C6AD89;
+  list-style: none;
+  line-height: 30%;
+}
+
+.menu-left nav#menu ul a {
+  text-decoration: none;
+  font-size: 80%;
+  color: #8C8E93;
+  text-transform: uppercase;
+}
+
+.menu-left nav#menu ul a:hover {
+  color:#66686b;
+}
+
 /* Main styles
 -------------------------------------------------- */
-
-body main {
+.noauth-container {
+  width: 100%;
   display: flex;
-  height: calc(100vh - 120px);
+  justify-content: center;
+  margin: 60px 0 0 0;
+  position: relative;
+}
+
+.main-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 60px 0px 0 240px;
+  position: relative;
+}
+
+#fotoperfil {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  border: 6px #C6AD89 solid;
+  margin-top: 15%;
+}
+
+#tracoDiferente {
+  margin-top: 14%;
+  border-top: 1px solid #C6AD89;
+  margin-bottom: 14%;
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+  border-radius: 1%;
+}
+::-webkit-scrollbar-track {
+  background-color: #c6aa893d;
+}
+::-webkit-scrollbar-button {
+  background-color: #c6ac89c0;
+  border-radius: 2%;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #c6ab8986;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #c6ac89c0;
+}
+
+.menu-left hr {
+  margin: 12px 0 12px 0;
+  border-top: 1px solid #999999;
 }
 
 /* Footer styles

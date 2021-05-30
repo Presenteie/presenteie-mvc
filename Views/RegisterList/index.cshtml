@@ -1,0 +1,41 @@
+@model Presenteie.Models.List
+@using Presenteie.Models.Enum
+@{
+    ViewData["Title"] = "Criar lista";
+    var userId = ViewBag.UserId;
+    Layout = "_Layout";
+
+}
+
+@section CSS
+{
+    <link rel="stylesheet" href="~/css/registerlist.css"/>
+}
+
+<div class="list-container">
+    <hr>
+    <form class="w-100" asp-action="Create" method="post" asp-controller="RegisterList">
+        <input type="hidden" asp-for="CreatedDate" value="@DateTime.Now" />
+        <input type="hidden" asp-for="Id" value="@null"/>
+        <input type="hidden" asp-for="IdUser" value="@userId"/>
+        <div id="theme" >
+            <p>Selecione a comemoração</p>
+            <select asp-for="ThemeList" required>
+                <option  value="@Theme.Birthday">Aniversário</option>
+                <option  value="@Theme.Wedding">Bodas</option>
+            </select>
+
+        </div>
+
+        <div id="date">
+            <p>Data do evento</p>
+            <input asp-for="EventDate" required />
+        </div>
+
+        <div id="description">
+            <p>Descrição do evento</p>
+            <textarea style="resize: none" cols="60" rows="5" asp-for="Description" required></textarea>
+        </div>
+        <button type="submit">Cadastrar lista</button>
+    </form>
+</div>

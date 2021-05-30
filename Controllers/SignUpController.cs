@@ -23,9 +23,6 @@ namespace Presenteie.Controllers
         [HttpPost]
         public IActionResult Index([FromForm] User user)
         {
-            if (!ModelState.IsValid)
-                return View(user);
-
             if (_context.Users.FirstOrDefault(u => u.Email.Equals(user.Email)) is not null)
             {
                 ModelState.AddModelError("Email", " The Email is already registered.");

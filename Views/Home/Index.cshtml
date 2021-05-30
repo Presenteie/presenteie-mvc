@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home";
+    Layout = "_Layout";
     var lists = ViewBag.lists;
 }
 
@@ -8,47 +9,23 @@
     <link rel="stylesheet" href="~/css/home.css">
 }
 
-<body>     
-        <div id= "LateralEsquerda">
-        <img id= "fotoperfil" src="img/4foto.png">
-
-        <nav id="menu">     
-          <h2><li>Informações</li></h2>
-            <hr id= "tracoDiferente">
-            <ul>
-            <a asp-controller="Home" asp-action="Index">Minha Lista</a>
-            <hr>
-            <a href="#">Meus Presentes</a>
-            <hr>
-            <a href="#">Configurações</a>
-            <hr>
-            <a href="#">Sair</a>
-            <hr>
-            </ul>
-        </nav> 
-        </div>
-
-        <div id= "LateralDireita"> 
-            <div id= "retangulo">
-            </div>
-
-            <div id="MyList">
-            <a href="#"> <strong>+ Criar Lista</strong> </a>
-            </div>
-
-            <div id="localimagens">
-                <div id="imagens">
-                    @foreach (var list in lists)
-                    {
-                        <div id="box">
-                            <a> <img src="img/festa1.jpeg"> </a>
-                            <h4> @User.Identity?.Name </h4>
-                            <p>@list.ThemeList | @list.EventDate.ToString("dd/MM/yyyy - hh:mm")</p>
-                        </div>
-                    }
+<div id= "home-container"> 
+    <div id= "retangulo"></div>
+    <div id="MyList">
+        <a  asp-ne href="/List/Create"> <strong>+ Criar Lista</strong> </a>
+    </div>
+    
+    <div id="gallery">
+        <div id="imagens">
+            @foreach (var list in lists)
+            {
+                <div id="box">
+                    <a asp-controller="ItemsList" asp-action="Index" asp-route-idList="@list.Id"> <img src="~/img/festa1.jpeg"> </a>
+                    <h4> @User.Identity?.Name </h4>
+                    <p>@list.ThemeList | @list.EventDate.ToString("dd/MM/yyyy - hh:mm")</p>
                 </div>
-            </div>
+            }
         </div>
-</body>
-
+    </div>
+</div>
       

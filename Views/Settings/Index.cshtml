@@ -1,0 +1,46 @@
+@model Presenteie.Models.User
+@{
+    ViewData["Title"] = "Configurações";
+    Layout = "_Layout";
+}
+
+@section CSS
+{
+    <link rel="stylesheet" href="~/css/settings.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"  />
+}
+
+<div class="top-links">
+    <a class="default-button" asp-controller="Settings" asp-action="ChangePassword">Alterar senha</a>
+</div>
+
+<div class="card-change-user">
+    <form class="w-100" asp-controller="Settings" asp-action="Edit">
+        <input type="hidden" asp-for="Id"/>
+        <div class="mb-3 form-group">
+            <label asp-for="Name" class="font-weight-bold m-0">Nome</label>
+            <input style="border-radius: 8px" asp-for="Name" class="form-control py-4" placeholder="Digite seu nome"/>
+            <div class="invalid-feedback" style="display:block;">
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="mb-3 form-group">
+            <label asp-for="Email" class="font-weight-bold m-0">Email</label>
+            <input style="border-radius: 8px" asp-for="Email" class="form-control py-4" placeholder="Digite seu email"/>
+            <div class="invalid-feedback" style="display:block;">
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="button-actions">
+            <input type="submit" class="alternative-button" value="Salvar Alterações"/>
+            <button class="default-button"  onclick="window.history.back(); return false;">Voltar</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts
+{
+    @{ <partial name="_ValidationScriptsPartial" /> }
+}

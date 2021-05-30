@@ -7,12 +7,14 @@
     <title>@ViewData["Title"] - Presenteie</title>
     
     <link rel="stylesheet" href="~/css/site.css"/>
-    <link rel="stylesheet" href="~/css/reset.css"/>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"  />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     
-    @await RenderSectionAsync("CSS", required: true)
+    @await RenderSectionAsync("CSS", required: false)
+    @section CSS
+    {
+        <link rel="stylesheet" href="~/css/home.css">
+    }
 </head>
 <body>
 
@@ -37,24 +39,8 @@
             </ul>
         </nav>
     </header>
-
-    <div class="menu-left">
-        <img id="fotoperfil" src="~/img/4foto.png" alt=""/>
-        <nav id="menu">
-            <h2><li>Informações</li></h2>
-            <hr id="tracoDiferente">
-            <ul>
-                <a asp-controller="Home" asp-action="Index">Minhas Listas</a>
-                <hr>
-                <a asp-controller="Settings" asp-action="Index">Configurações</a>
-                <hr>
-                <a asp-controller="Login" asp-action="Logout">Sair</a>
-                <hr>
-            </ul>
-        </nav>
-    </div>
-
-    <div class="main-container">
+    
+    <div class="noauth-container">
         @RenderBody()
     </div>
 </main>
