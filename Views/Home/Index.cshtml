@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home";
+
     var lists = ViewBag.lists;
 }
 
@@ -16,13 +17,11 @@
           <h2><li>Informações</li></h2>
             <hr id= "tracoDiferente">
             <ul>
-            <a asp-controller="Home" asp-action="Index">Minha Lista</a>
+            <a href="https://localhost:5001">Minhas Listas</a>
             <hr>
-            <a href="#">Meus Presentes</a>
+            <a href="https://localhost:5001/Settings">Configurações</a>
             <hr>
-            <a href="#">Configurações</a>
-            <hr>
-            <a href="#">Sair</a>
+            <a asp-controller="Login" asp-action="Logout">Sair</a>
             <hr>
             </ul>
         </nav> 
@@ -33,11 +32,12 @@
             </div>
 
             <div id="MyList">
-            <a href="#"> <strong>+ Criar Lista</strong> </a>
+            <a href="https://localhost:5001/List/Create"> <strong>+ Criar Lista</strong> </a>
             </div>
 
             <div id="localimagens">
                 <div id="imagens">
+
                     @foreach (var list in lists)
                     {
                         <div id="box">
