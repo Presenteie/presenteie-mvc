@@ -1,12 +1,15 @@
 using System;
 using System.Linq;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Presenteie.Models;
 
 namespace Presenteie.Controllers
 {
+    [Authorize]
+
     public class RegisterItemController : Controller
     {
         private readonly PresenteieContext _context;
@@ -15,7 +18,7 @@ namespace Presenteie.Controllers
         {
             _context = presenteieContext;
         }
-
+        //After entering the item information, the user creates an item within the list.
         [HttpGet("Item/Create/{idList}")]
         public IActionResult Index([FromRoute] long idList)
         {
@@ -43,7 +46,7 @@ namespace Presenteie.Controllers
                 idList = id
             });
         }
-
+        //The view return the item previously entered by the user and save on database.
         [HttpPost]
         public IActionResult Create([FromForm] Item item)
         {
@@ -57,7 +60,7 @@ namespace Presenteie.Controllers
                 idList = item.IdList
             });
         }
-        
+        //After inserting all the item information, the user can edit them, updating all data in the database.
         [HttpPost]
         public IActionResult SaveEdit([FromForm] Item item)
         {
@@ -71,7 +74,7 @@ namespace Presenteie.Controllers
                 idList = item.IdList
             });
         } 
-        
+        //Receive the item id, get item of database and send to view.
         [HttpGet("Item/Edit/{idItem}")]
         public IActionResult Edit([FromRoute] long idItem)
         {
@@ -106,7 +109,7 @@ namespace Presenteie.Controllers
                 idList = item.IdList
             });
         }
-        
+        //The user can delete the item stored in the list
         [HttpGet("Item/Delete/{idItem}")]
         public IActionResult Delete([FromRoute] long idItem)
         {
