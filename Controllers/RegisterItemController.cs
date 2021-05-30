@@ -18,6 +18,8 @@ namespace Presenteie.Controllers
             _context = presenteieContext;
         }
 
+        //After entering the item information, the user creates an item within the list.
+
         [HttpGet("Item/{idList}/Create")]
         public IActionResult Index([FromRoute] long idList)
         {
@@ -45,7 +47,7 @@ namespace Presenteie.Controllers
                 idList = id
             });
         }
-
+        //The view return the item previously entered by the user and save on database.
         [HttpPost]
         public IActionResult Create([FromForm] Item item)
         {
@@ -59,7 +61,7 @@ namespace Presenteie.Controllers
                 idList = item.IdList
             });
         }
-        
+        //After inserting all the item information, the user can edit them, updating all data in the database.
         [HttpPost]
         public IActionResult SaveEdit([FromForm] Item item)
         {
@@ -73,6 +75,8 @@ namespace Presenteie.Controllers
                 idList = item.IdList
             });
         } 
+        //Receive the item id, get item of database and send to view.
+
         
         [HttpGet("Item/{idItem}/Edit")]
         public IActionResult Edit([FromRoute] long idItem)
@@ -108,6 +112,8 @@ namespace Presenteie.Controllers
                 idList = item.IdList
             });
         }
+
+        //The user can delete the item stored in the list
         
         [HttpGet("Item/{idItem}/Delete")]
         public IActionResult Delete([FromRoute] long idItem)

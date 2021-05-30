@@ -17,7 +17,7 @@
     <div class="superior">
         <div class="superior-empty"></div>
         <ul>
-            <li>Cadastrar Itens</li>
+            
         </ul>
     </div>
     
@@ -35,24 +35,37 @@
             <label>
                 Nome do Produto
                 <input type="text" asp-for="Name" placeholder="Cafeteira"/>
-                
-                </label>
+                <div class="invalid-feedback" style="display:block;">
+                    <span asp-validation-for="Name"></span>
+                </div>
+            </label>
             <label>
                 Descrição
                 <input type="text" asp-for="Description" placeholder="Eletrodomestico | Americanas"/>
-                
+                <div class="invalid-feedback" style="display:block;">
+                    <span asp-validation-for="Description"></span>
+                </div>
             </label>
             <label>
                 R$ Adicionar Preço
                 <input type="number" min="0" step="0.01" asp-for="Value" placeholder="0,00"/>
-                
+                <div class="invalid-feedback" style="display:block;">
+                    <span asp-validation-for="Value"></span>
+                </div>
             </label>
-            <label>Nome da loja</label>
-            <input type="text" asp-for="StoreName" placeholder="Pinguim">
+            <label>
+                Nome da loja
+                <input type="text" asp-for="StoreName" placeholder="Pinguim">
+                <div class="invalid-feedback" style="display:block;">
+                    <span asp-validation-for="StoreName"></span>
+                </div>
+            </label>
             <label>
                 + Adicionar Link
                 <input type="url" asp-for="Link" placeholder="www.Americanas.com"/>
-                            
+                <div class="invalid-feedback" style="display:block;">
+                    <span asp-validation-for="Link"></span>
+                </div>            
             </label>
         </div>
         <button type="submit">Salvar</button>

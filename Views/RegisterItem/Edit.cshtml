@@ -15,7 +15,7 @@
     <div class="superior">
         <div class="superior-empty"></div>
         <ul>
-            <li>Cadastrar Itens</li>
+
         </ul>
     </div>
     
@@ -33,24 +33,37 @@
             <label>
                 Nome do Produto
                 <input type="text" asp-for="Name" value="@item.Name"/>
-                
+                <div class="invalid-feedback" style="display:block;">
+                    <span asp-validation-for="Name"></span>
+                </div>
             </label>
             <label>
                 Descrição
                 <input type="text" asp-for="Description" value="@item.Description"/>
-                
+                <div class="invalid-feedback" style="display:block;">
+                    <span asp-validation-for="Description"></span>
+                </div>
             </label>
             <label>
                 R$ Adicionar Preço
                 <input type="number" min="0" step="0.01" asp-for="Value" value="@item.Value"/>
-                
+                <div class="invalid-feedback" style="display:block;">
+                    <span asp-validation-for="Value"></span>
+                </div>
             </label>
-            <label>Nome da loja</label>
-            <input type="text" asp-for="StoreName" value="@item.StoreName">
+            <label>
+                Nome da loja
+                <input type="text" asp-for="StoreName" value="@item.StoreName">
+                <div class="invalid-feedback" style="display:block;">
+                    <span asp-validation-for="StoreName"></span>
+                </div>
+            </label>
             <label>
                 + Adicionar Link
                 <input type="url" asp-for="Link" value="@item.Link"/>
-                            
+                <div class="invalid-feedback" style="display:block;">
+                    <span asp-validation-for="Link"></span>
+                </div>                       
             </label>
         </div>
         <button type="submit">Salvar</button>
