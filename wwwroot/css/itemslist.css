@@ -10,53 +10,6 @@ body main {
     --color-text-hover: #66686b;
 }
 
-div#lefttSide {
-    display: flex;
-    flex-direction: column;
-    width: 22%;
-    place-items: center;
-    background-color: var(--background-color-right-side);
-    box-shadow: 4px 5px 13px var(--color-shadow);
-    text-align: center;
-}
-
-div#lefttSide img {
-    width: 60%;
-    height: 30%;
-    border-radius: 50%;
-    border: 6px var(--image-border-color) solid;
-    margin-top: 15%; 
-}
-
-div#lefttSide nav#menu h2 {
-    margin-top: 40%;
-    font-size: 13pt;
-    color: var(--color-h2);
-    list-style: none;
-    line-height: 30%;
-}
-
-div#lefttSide nav#menu ul {
-    margin-top: 15%;
-}
-
-div#lefttSide nav#menu ul hr {
-    margin-top: 14%;
-    border-top: 1px solid #999999;
-    margin-bottom: 14%;
-}
-
-div#lefttSide nav#menu ul a {
-    text-decoration: none;
-    font-size: 80%;
-    color: var(--color-text);
-    text-transform: uppercase;
-}
-
-div#lefttSide nav#menu ul a:hover {
-    color: var(--color-text-hover);
-}
-
 div#rightside {
     width: 78%;
     display: flex;
@@ -67,7 +20,7 @@ div#rightside div#MyList {
     display: flex;
     height: 7%;
     width: 83%;
-    margin: 2.5% 0 0 3.4%;
+    margin: 2.5% 0 0 ;
     align-items: center;
 }
 
@@ -86,11 +39,11 @@ div#rightside div#MyList a {
     color: white;
     background-color: var(--image-border-color);
     margin-left: auto;
-    width: 20%;
+    width: 13%;
     height: 27px;
     border-radius: 7px;
     font-size: 15pt;
-    padding-left: 40px;
+    padding-left: 0.5%;
 }
 
 div#rightside div#MyList a:hover {
@@ -98,7 +51,7 @@ div#rightside div#MyList a:hover {
 }
 
 div#rightside img {
-    margin-left: 4%;
+    margin-top: 4%;
     object-fit: contain;
     width: 55%;
     border: 8px white solid;
@@ -108,19 +61,25 @@ div#rightside img {
 div#rightside div#createItem {
     display: flex;
     align-items: center;
-    margin: 1% 4%;
-    width: 55%;
+    margin: 2% 0;
+    width: 66%;
 }
 
 div#rightside div#createItem h1 {
     color: var(--color-h2);
+    margin: 0;
 }
 
 div#rightside div#createItem form {
-    width: 25%;
+    width: 30%;
     display: flex;
     align-items: center;
-    margin-left: 65%;
+    text-align: center;
+    margin-left: auto;
+}
+
+div#rightside div#createItem form p {
+    margin-top: 20px;
 }
 
 div#rightside div#createItem button {
@@ -135,14 +94,21 @@ div#rightside div#createItem button {
 
 div#rightside p {
     color: var(--color-text);
-    margin-left: 4%;
+}
+
+div#rightside .Items {
+    margin: 1.5% 0;
+    width: 60%;
+    overflow-y: auto;
+    height: 700px;
+    padding: 5px;
 }
 
 div#rightside div#item {
-    margin: 1.5% 4%;
+    margin: 10px 0 10px 0;
+    width: 100%;
     display: flex;
     background-color: white;
-    width: 40%;
     border-radius: 10px;
     box-shadow: 4px 5px 13px var(--color-shadow);
 }
@@ -181,6 +147,10 @@ div#rightside div#item div#values h3 {
     color: var(--color-h2);
 }
 
+div#rightside div#item div#values h5 {
+    font-size: 0.80rem;
+}
+
 div#rightside div#item div#values p {
     margin: 0;
 }
@@ -188,6 +158,12 @@ div#rightside div#item div#values p {
 div#rightside div#item div#values a {
     text-decoration: none;
     color: var(--color-text);
+}
+
+div#rightside div#item #Delete {
+    margin-left: auto;
+    background-color: white;
+    border: none;
 }
 
 div#rightside div#item button {

@@ -20,7 +20,7 @@
             @foreach (var list in lists)
             {
                 <div id="box">
-                    <a> <img src="~/img/festa1.jpeg"> </a>
+                    <a asp-controller="ItemsList" asp-action="Index" asp-route-idList="@list.Id"> <img src="~/img/festa1.jpeg"> </a>
                     <h4> @User.Identity?.Name </h4>
                     <p>@list.ThemeList | @list.EventDate.ToString("dd/MM/yyyy - hh:mm")</p>
                 </div>

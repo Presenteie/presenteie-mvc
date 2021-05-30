@@ -16,7 +16,7 @@ namespace Presenteie.Controllers
             _context = presenteieContext;
         }
 
-        [HttpGet("Item/Create/{idList}")]
+        [HttpGet("Item/{idList}/Create")]
         public IActionResult Index([FromRoute] long idList)
         {
             Console.WriteLine(idList);
@@ -72,7 +72,7 @@ namespace Presenteie.Controllers
             });
         } 
         
-        [HttpGet("Item/Edit/{idItem}")]
+        [HttpGet("Item/{idItem}/Edit")]
         public IActionResult Edit([FromRoute] long idItem)
         {
             var lists = _context.Users.Join(
@@ -107,7 +107,7 @@ namespace Presenteie.Controllers
             });
         }
         
-        [HttpGet("Item/Delete/{idItem}")]
+        [HttpGet("Item/{idItem}/Delete")]
         public IActionResult Delete([FromRoute] long idItem)
         {
             var lists = _context.Users.Join(

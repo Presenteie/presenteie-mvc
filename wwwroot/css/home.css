@@ -22,6 +22,9 @@ div#home-container div#gallery {
     position: absolute;
     margin-top: 93px;
     width: 100%;
+    overflow: auto;
+    overflow-y: scroll;
+    height: 700px;
 }
 
 div#imagens {
@@ -38,7 +41,6 @@ div#imagens div#box {
     text-align: center;
     display: inline-block;
     transition: 0.4s;
-
 }
 
 div#imagens div#box:hover {

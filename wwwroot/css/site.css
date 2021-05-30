@@ -169,6 +169,24 @@ body main {
   margin-bottom: 14%;
 }
 
+::-webkit-scrollbar {
+  width: 11px;
+  border-radius: 1%;
+}
+::-webkit-scrollbar-track {
+  background-color: #c6aa893d;
+}
+::-webkit-scrollbar-button {
+  background-color: #c6ac89c0;
+  border-radius: 2%;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #c6ab8986;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #c6ac89c0;
+}
+
 .menu-left hr {
   margin: 12px 0 12px 0;
   border-top: 1px solid #999999;

@@ -1,6 +1,5 @@
 @model Presenteie.Models.List
 @using Presenteie.Models.Enum
-
 @{
     ViewData["Title"] = "Criar lista";
     var userId = ViewBag.UserId;
@@ -13,7 +12,7 @@
     <link rel="stylesheet" href="~/css/registerlist.css"/>
 }
 
-<div class="registerlist">
+<div class="list-container">
     <hr>
     <form class="w-100" asp-action="Create" method="post" asp-controller="RegisterList">
         <input type="hidden" asp-for="CreatedDate" value="@DateTime.Now" />
