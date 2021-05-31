@@ -20,6 +20,7 @@ namespace Presenteie.Controllers
             _context = presenteieContext;
         }
 
+        // Send an email using the API
         private void SendMail(string email, string hash)
         {
             var client = new RestClient("https://api.mailgun.net/v3");
@@ -38,7 +39,8 @@ namespace Presenteie.Controllers
             
             Console.WriteLine(client.Execute(request).Content.ToString());
         }
-        
+
+        // Receives a recovery hash and displays the page
         [HttpGet("{hash?}")]
         public IActionResult Index(string hash)
         {
@@ -64,6 +66,7 @@ namespace Presenteie.Controllers
             return View();
         }
 
+        // Create a new verification hash and save to the database
         [HttpPost]
         public IActionResult Save([FromForm] string email)
         {
@@ -97,6 +100,7 @@ namespace Presenteie.Controllers
             return RedirectToAction("Confirmed", "Security");
         }
 
+        // Create a new verification hash and save to the database
         [HttpPost("Reset/{hash}")]
         public IActionResult Reset(string hash, [FromForm] string password)
         {
@@ -123,12 +127,14 @@ namespace Presenteie.Controllers
             return NotFound();
         }
 
+        // Displays confirmation screen
         [HttpGet("Confirmed")]
         public IActionResult Confirmed()
         {
             return View("Confirmed");
         }
 
+        // Displays success screen
         [HttpGet("Finish")]
         public IActionResult Finish()
         {
